@@ -4,7 +4,16 @@ namespace PiraSoft.Tools.Core.Extensions
 {
     public static class ExceptionExtensions
     {
-        public static string? Dump(this Exception exception, int indent = 0)
+        /// <summary>
+        /// Create a detailed dump of exception data
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="indent"></param>
+        /// <returns></returns>
+        public static string? Dump(this Exception target)
+            => target.Dump(0);
+
+        private static string? Dump(this Exception exception, int indent)
         {
             if (exception == null)
                 return null;
