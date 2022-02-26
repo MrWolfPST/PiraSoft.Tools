@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiraSoft.Tools.Core", "PiraSoft.Tools.Core\PiraSoft.Tools.Core.csproj", "{36F64D5D-0D0A-4A59-9CEC-6B541967A8CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{913A5373-4144-425C-91E6-BE3B67B0B742}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{A98A561E-C188-427C-9D92-5687C1B713EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiraSoft.Tools.Core.UnitTest", "PiraSoft.Tools.Core.UnitTest\PiraSoft.Tools.Core.UnitTest.csproj", "{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36F64D5D-0D0A-4A59-9CEC-6B541967A8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F64D5D-0D0A-4A59-9CEC-6B541967A8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F64D5D-0D0A-4A59-9CEC-6B541967A8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F64D5D-0D0A-4A59-9CEC-6B541967A8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A} = {A98A561E-C188-427C-9D92-5687C1B713EF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE4D3CCC-3428-4C79-9E88-583417D9E7FC}
+	EndGlobalSection
+EndGlobal
