@@ -1,20 +1,21 @@
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
-namespace PiraSoft.Tools.Core.UnitTest;
+namespace PiraSoft.Tools.UnitTest.Core.Extensions;
+
 [TestClass]
 public class DictionaryExtensionsUnitTest
 {
     [TestMethod]
     public void MergeDistinct()
     {
-        var target = new Dictionary<int, string>() 
+        Dictionary<int, string>? target = new Dictionary<int, string>()
         {
             {1, "Target One" },
             {2, "Target Two" }
         };
 
-        var other = new Dictionary<int, string>()
+        Dictionary<int, string>? other = new Dictionary<int, string>()
         {
             {3, "Other Three" },
             {4, "Other Four" }
@@ -28,13 +29,13 @@ public class DictionaryExtensionsUnitTest
     [TestMethod]
     public void MergePreserve()
     {
-        var target = new Dictionary<int, string>()
+        Dictionary<int, string>? target = new Dictionary<int, string>()
         {
             {1, "Target One" },
             {2, "Target Two" }
         };
 
-        var other = new Dictionary<int, string>()
+        Dictionary<int, string>? other = new Dictionary<int, string>()
         {
             {2, "Other Two" },
             {3, "Other Three" }
@@ -49,13 +50,13 @@ public class DictionaryExtensionsUnitTest
     [TestMethod]
     public void MergeUpdate()
     {
-        var target = new Dictionary<int, string>()
+        Dictionary<int, string>? target = new Dictionary<int, string>()
         {
             {1, "Target One" },
             {2, "Target Two" }
         };
 
-        var other = new Dictionary<int, string>()
+        Dictionary<int, string>? other = new Dictionary<int, string>()
         {
             {2, "Other Two" },
             {3, "Other Three" }

@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<results>
+  <modules>
+    <module block_coverage="98,31" line_coverage="97,73" blocks_covered="116" blocks_not_covered="2" lines_covered="86" lines_partially_covered="2" lines_not_covered="0" name="pirasoft.tools.core.unittest.dll" path="pirasoft.tools.core.unittest.dll" id="B06C1FC1D9D4C14289AB9D484C6D57EC01000000">
+      <functions>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="4" blocks_not_covered="0" lines_covered="4" lines_partially_covered="0" lines_not_covered="0" id="8284" token="0x6000003" name="IndexOf()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ArrayExtensionsUnitTest">
+          <ranges>
+            <range source_id="0" covered="yes" start_line="11" start_column="5" end_line="11" end_column="6" />
+            <range source_id="0" covered="yes" start_line="12" start_column="9" end_line="12" end_column="74" />
+            <range source_id="0" covered="yes" start_line="14" start_column="9" end_line="14" end_column="48" />
+            <range source_id="0" covered="yes" start_line="15" start_column="5" end_line="15" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="4" blocks_not_covered="0" lines_covered="4" lines_partially_covered="0" lines_not_covered="0" id="8340" token="0x6000004" name="IndexOfFrom()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ArrayExtensionsUnitTest">
+          <ranges>
+            <range source_id="0" covered="yes" start_line="19" start_column="5" end_line="19" end_column="6" />
+            <range source_id="0" covered="yes" start_line="20" start_column="9" end_line="20" end_column="74" />
+            <range source_id="0" covered="yes" start_line="22" start_column="9" end_line="22" end_column="51" />
+            <range source_id="0" covered="yes" start_line="23" start_column="5" end_line="23" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="4" blocks_not_covered="0" lines_covered="4" lines_partially_covered="0" lines_not_covered="0" id="8396" token="0x6000005" name="IndexOfFromTo()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ArrayExtensionsUnitTest">
+          <ranges>
+            <range source_id="0" covered="yes" start_line="27" start_column="5" end_line="27" end_column="6" />
+            <range source_id="0" covered="yes" start_line="28" start_column="9" end_line="28" end_column="74" />
+            <range source_id="0" covered="yes" start_line="30" start_column="9" end_line="30" end_column="55" />
+            <range source_id="0" covered="yes" start_line="31" start_column="5" end_line="31" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="10" blocks_not_covered="0" lines_covered="14" lines_partially_covered="0" lines_not_covered="0" id="8460" token="0x6000007" name="MergeDistinct()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="DictionaryExtensionsUnitTest">
+          <ranges>
+            <range source_id="1" covered="yes" start_line="11" start_column="5" end_line="11" end_column="6" />
+            <range source_id="1" covered="yes" start_line="12" start_column="9" end_line="16" end_column="11" />
+            <range source_id="1" covered="yes" start_line="18" start_column="9" end_line="22" end_column="11" />
+            <range source_id="1" covered="yes" start_line="24" start_column="9" end_line="24" end_column="29" />
+            <range source_id="1" covered="yes" start_line="26" start_column="9" end_line="26" end_column="42" />
+            <range source_id="1" covered="yes" start_line="27" start_column="5" end_line="27" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="12" blocks_not_covered="0" lines_covered="15" lines_partially_covered="0" lines_not_covered="0" id="8560" token="0x6000008" name="MergePreserve()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="DictionaryExtensionsUnitTest">
+          <ranges>
+            <range source_id="1" covered="yes" start_line="31" start_column="5" end_line="31" end_column="6" />
+            <range source_id="1" covered="yes" start_line="32" start_column="9" end_line="36" end_column="11" />
+            <range source_id="1" covered="yes" start_line="38" start_column="9" end_line="42" end_column="11" />
+            <range source_id="1" covered="yes" start_line="44" start_column="9" end_line="44" end_column="29" />
+            <range source_id="1" covered="yes" start_line="46" start_column="9" end_line="46" end_column="42" />
+            <range source_id="1" covered="yes" start_line="47" start_column="9" end_line="47" end_column="50" />
+            <range source_id="1" covered="yes" start_line="48" start_column="5" end_line="48" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="12" blocks_not_covered="0" lines_covered="15" lines_partially_covered="0" lines_not_covered="0" id="8680" token="0x6000009" name="MergeUpdate()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="DictionaryExtensionsUnitTest">
+          <ranges>
+            <range source_id="1" covered="yes" start_line="52" start_column="5" end_line="52" end_column="6" />
+            <range source_id="1" covered="yes" start_line="53" start_column="9" end_line="57" end_column="11" />
+            <range source_id="1" covered="yes" start_line="59" start_column="9" end_line="63" end_column="11" />
+            <range source_id="1" covered="yes" start_line="65" start_column="9" end_line="65" end_column="36" />
+            <range source_id="1" covered="yes" start_line="67" start_column="9" end_line="67" end_column="42" />
+            <range source_id="1" covered="yes" start_line="68" start_column="9" end_line="68" end_column="49" />
+            <range source_id="1" covered="yes" start_line="69" start_column="5" end_line="69" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="20" blocks_not_covered="0" lines_covered="10" lines_partially_covered="0" lines_not_covered="0" id="8808" token="0x600000b" name="ForEach()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="IEnumerableExtensionsUnitTest">
+          <ranges>
+            <range source_id="2" covered="yes" start_line="11" start_column="5" end_line="11" end_column="6" />
+            <range source_id="2" covered="yes" start_line="12" start_column="9" end_line="12" end_column="60" />
+            <range source_id="2" covered="yes" start_line="13" start_column="9" end_line="13" end_column="43" />
+            <range source_id="2" covered="yes" start_line="15" start_column="9" end_line="15" end_column="46" />
+            <range source_id="2" covered="yes" start_line="17" start_column="9" end_line="17" end_column="40" />
+            <range source_id="2" covered="yes" start_line="18" start_column="9" end_line="18" end_column="37" />
+            <range source_id="2" covered="yes" start_line="19" start_column="9" end_line="19" end_column="37" />
+            <range source_id="2" covered="yes" start_line="20" start_column="9" end_line="20" end_column="37" />
+            <range source_id="2" covered="yes" start_line="21" start_column="9" end_line="21" end_column="37" />
+            <range source_id="2" covered="yes" start_line="22" start_column="5" end_line="22" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="8" blocks_not_covered="0" lines_covered="5" lines_partially_covered="0" lines_not_covered="0" id="9000" token="0x600000d" name="AddRangeIEnumerable()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="IListExtensionsUnitTest">
+          <ranges>
+            <range source_id="3" covered="yes" start_line="13" start_column="5" end_line="13" end_column="6" />
+            <range source_id="3" covered="yes" start_line="14" start_column="9" end_line="14" end_column="66" />
+            <range source_id="3" covered="yes" start_line="16" start_column="9" end_line="16" end_column="49" />
+            <range source_id="3" covered="yes" start_line="18" start_column="9" end_line="18" end_column="42" />
+            <range source_id="3" covered="yes" start_line="19" start_column="5" end_line="19" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="8" blocks_not_covered="0" lines_covered="5" lines_partially_covered="0" lines_not_covered="0" id="9064" token="0x600000e" name="AddRangeParamArray()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="IListExtensionsUnitTest">
+          <ranges>
+            <range source_id="3" covered="yes" start_line="23" start_column="5" end_line="23" end_column="6" />
+            <range source_id="3" covered="yes" start_line="24" start_column="9" end_line="24" end_column="66" />
+            <range source_id="3" covered="yes" start_line="26" start_column="9" end_line="26" end_column="40" />
+            <range source_id="3" covered="yes" start_line="28" start_column="9" end_line="28" end_column="42" />
+            <range source_id="3" covered="yes" start_line="29" start_column="5" end_line="29" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="8" blocks_not_covered="0" lines_covered="5" lines_partially_covered="0" lines_not_covered="0" id="9140" token="0x600000f" name="AddRangeList()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="IListExtensionsUnitTest">
+          <ranges>
+            <range source_id="3" covered="yes" start_line="33" start_column="5" end_line="33" end_column="6" />
+            <range source_id="3" covered="yes" start_line="34" start_column="9" end_line="34" end_column="54" />
+            <range source_id="3" covered="yes" start_line="36" start_column="9" end_line="36" end_column="40" />
+            <range source_id="3" covered="yes" start_line="38" start_column="9" end_line="38" end_column="42" />
+            <range source_id="3" covered="yes" start_line="39" start_column="5" end_line="39" end_column="6" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="5" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="9222" token="0x6000011" name="GetNotImplementedException()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ObjectExtensionsUnitTest">
+          <ranges>
+            <range source_id="4" covered="yes" start_line="11" start_column="12" end_line="11" end_column="111" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="5" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="9255" token="0x6000012" name="GetNotSupportedException()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ObjectExtensionsUnitTest">
+          <ranges>
+            <range source_id="4" covered="yes" start_line="15" start_column="12" end_line="15" end_column="107" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="5" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="9288" token="0x6000013" name="ThrowNotImplementedException()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ObjectExtensionsUnitTest">
+          <ranges>
+            <range source_id="4" covered="yes" start_line="19" start_column="12" end_line="19" end_column="110" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="5" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="9327" token="0x6000014" name="ThrowNotSupportedException()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ObjectExtensionsUnitTest">
+          <ranges>
+            <range source_id="4" covered="yes" start_line="23" start_column="12" end_line="23" end_column="106" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="9384" token="0x6000017" name="&lt;ForEach&gt;b__0(int)" namespace="PiraSoft.Tools.Core.UnitTest" type_name="IEnumerableExtensionsUnitTest.&lt;&gt;c__DisplayClass0_0">
+          <ranges>
+            <range source_id="2" covered="yes" start_line="15" start_column="29" end_line="15" end_column="44" />
+          </ranges>
+        </function>
+        <function block_coverage="66,67" line_coverage="0,00" blocks_covered="2" blocks_not_covered="1" lines_covered="0" lines_partially_covered="1" lines_not_covered="0" id="9422" token="0x600001a" name="&lt;ThrowNotImplementedException&gt;b__2_0()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ObjectExtensionsUnitTest.&lt;&gt;c">
+          <ranges>
+            <range source_id="4" covered="partial" start_line="19" start_column="66" end_line="19" end_column="109" />
+          </ranges>
+        </function>
+        <function block_coverage="66,67" line_coverage="0,00" blocks_covered="2" blocks_not_covered="1" lines_covered="0" lines_partially_covered="1" lines_not_covered="0" id="9440" token="0x600001b" name="&lt;ThrowNotSupportedException&gt;b__3_0()" namespace="PiraSoft.Tools.Core.UnitTest" type_name="ObjectExtensionsUnitTest.&lt;&gt;c">
+          <ranges>
+            <range source_id="4" covered="partial" start_line="23" start_column="64" end_line="23" end_column="105" />
+          </ranges>
+        </function>
+      </functions>
+      <skipped_functions>
+        <skipped_function id="8272" original_id="8272" token="0x6000001" name="Main(string[])" type_name="AutoGeneratedProgram" reason="attribute_excluded" />
+      </skipped_functions>
+      <source_files>
+        <source_file id="0" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core.UnitTest\ArrayExtensionsUnitTest.cs" />
+        <source_file id="1" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core.UnitTest\DictionaryExtensionsUnitTest.cs" />
+        <source_file id="2" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core.UnitTest\IEnumerableExtensionsUnitTest.cs" />
+        <source_file id="3" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core.UnitTest\IListExtensionsUnitTest.cs" />
+        <source_file id="4" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core.UnitTest\ObjectExtensionsUnitTest.cs" />
+      </source_files>
+    </module>
+    <module block_coverage="82,81" line_coverage="72,73" blocks_covered="53" blocks_not_covered="11" lines_covered="40" lines_partially_covered="0" lines_not_covered="15" name="pirasoft.tools.core.dll" path="pirasoft.tools.core.dll" id="327B3DB55328104B9654E3F1316E59A901000000">
+      <functions>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8338" token="0x6000005" name="IndexOf(System.Array, object)" namespace="System" type_name="ArrayExtensions">
+          <ranges>
+            <range source_id="0" covered="yes" start_line="15" start_column="16" end_line="15" end_column="43" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8347" token="0x6000006" name="IndexOf(System.Array, object, int)" namespace="System" type_name="ArrayExtensions">
+          <ranges>
+            <range source_id="0" covered="yes" start_line="25" start_column="16" end_line="25" end_column="55" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8357" token="0x6000007" name="IndexOf(System.Array, object, int, int)" namespace="System" type_name="ArrayExtensions">
+          <ranges>
+            <range source_id="0" covered="yes" start_line="36" start_column="16" end_line="36" end_column="62" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="5" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8368" token="0x6000008" name="GetNotImplementedException(object, string)" namespace="System" type_name="ObjectExtensions">
+          <ranges>
+            <range source_id="1" covered="yes" start_line="17" start_column="16" end_line="17" end_column="79" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="5" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8397" token="0x6000009" name="GetNotSupportedException(object, string)" namespace="System" type_name="ObjectExtensions">
+          <ranges>
+            <range source_id="1" covered="yes" start_line="26" start_column="16" end_line="26" end_column="77" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8426" token="0x600000a" name="ThrowNotImplementedException(object, string)" namespace="System" type_name="ObjectExtensions">
+          <ranges>
+            <range source_id="1" covered="yes" start_line="35" start_column="16" end_line="35" end_column="63" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8435" token="0x600000b" name="ThrowNotSupportedException(object, string)" namespace="System" type_name="ObjectExtensions">
+          <ranges>
+            <range source_id="1" covered="yes" start_line="44" start_column="16" end_line="44" end_column="61" />
+          </ranges>
+        </function>
+        <function block_coverage="0,00" line_coverage="0,00" blocks_covered="0" blocks_not_covered="11" lines_covered="0" lines_partially_covered="0" lines_not_covered="15" id="8444" token="0x600000c" name="IsNumericDatatype(object)" namespace="System" type_name="ObjectExtensions">
+          <ranges>
+            <range source_id="1" covered="no" start_line="51" start_column="66" end_line="65" end_column="10" />
+            <range source_id="1" covered="no" start_line="63" start_column="32" end_line="63" end_column="36" />
+            <range source_id="1" covered="no" start_line="64" start_column="18" end_line="64" end_column="23" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="4" blocks_not_covered="0" lines_covered="11" lines_partially_covered="0" lines_not_covered="0" id="8496" token="0x600000d" name="Merge&lt;TKey, TValue&gt;(System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;, System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;, bool)" namespace="System.Collections.Generic" type_name="DictionaryExtensions">
+          <ranges>
+            <range source_id="2" covered="yes" start_line="18" start_column="16" end_line="28" end_column="15" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="3" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8548" token="0x600000e" name="ForEach&lt;T&gt;(System.Collections.Generic.IEnumerable&lt;T&gt;, System.Action&lt;T&gt;)" namespace="System.Collections.Generic" type_name="IEnumerableExtensions">
+          <ranges>
+            <range source_id="3" covered="yes" start_line="17" start_column="16" end_line="17" end_column="47" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="8" blocks_not_covered="0" lines_covered="9" lines_partially_covered="0" lines_not_covered="0" id="8564" token="0x600000f" name="AddRange&lt;T&gt;(System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;)" namespace="System.Collections.Generic" type_name="IListExtensions">
+          <ranges>
+            <range source_id="4" covered="yes" start_line="18" start_column="9" end_line="18" end_column="10" />
+            <range source_id="4" covered="yes" start_line="19" start_column="13" end_line="19" end_column="42" />
+            <range source_id="4" covered="yes" start_line="20" start_column="13" end_line="20" end_column="14" />
+            <range source_id="4" covered="yes" start_line="21" start_column="17" end_line="21" end_column="40" />
+            <range source_id="4" covered="yes" start_line="22" start_column="13" end_line="22" end_column="14" />
+            <range source_id="4" covered="yes" start_line="24" start_column="13" end_line="24" end_column="14" />
+            <range source_id="4" covered="yes" start_line="25" start_column="17" end_line="25" end_column="51" />
+            <range source_id="4" covered="yes" start_line="26" start_column="13" end_line="26" end_column="14" />
+            <range source_id="4" covered="yes" start_line="27" start_column="9" end_line="27" end_column="10" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="3" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8644" token="0x6000010" name="AddRange&lt;T&gt;(System.Collections.Generic.IList&lt;T&gt;, T[])" namespace="System.Collections.Generic" type_name="IListExtensions">
+          <ranges>
+            <range source_id="4" covered="yes" start_line="39" start_column="16" end_line="39" end_column="53" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="13" blocks_not_covered="0" lines_covered="10" lines_partially_covered="0" lines_not_covered="0" id="8668" token="0x6000012" name="&lt;Merge&gt;b__0(System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;)" namespace="System.Collections.Generic" type_name="DictionaryExtensions.&lt;&gt;c__DisplayClass0_0&lt;TKey, TValue&gt;">
+          <ranges>
+            <range source_id="2" covered="yes" start_line="19" start_column="13" end_line="19" end_column="14" />
+            <range source_id="2" covered="yes" start_line="20" start_column="17" end_line="20" end_column="48" />
+            <range source_id="2" covered="yes" start_line="21" start_column="17" end_line="21" end_column="18" />
+            <range source_id="2" covered="yes" start_line="22" start_column="21" end_line="22" end_column="48" />
+            <range source_id="2" covered="yes" start_line="23" start_column="17" end_line="23" end_column="18" />
+            <range source_id="2" covered="yes" start_line="24" start_column="22" end_line="24" end_column="46" />
+            <range source_id="2" covered="yes" start_line="25" start_column="17" end_line="25" end_column="18" />
+            <range source_id="2" covered="yes" start_line="26" start_column="21" end_line="26" end_column="45" />
+            <range source_id="2" covered="yes" start_line="27" start_column="17" end_line="27" end_column="18" />
+            <range source_id="2" covered="yes" start_line="28" start_column="13" end_line="28" end_column="14" />
+          </ranges>
+        </function>
+        <function block_coverage="100,00" line_coverage="100,00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0" id="8787" token="0x6000014" name="&lt;AddRange&gt;b__0(T)" namespace="System.Collections.Generic" type_name="IListExtensions.&lt;&gt;c__DisplayClass0_0&lt;T&gt;">
+          <ranges>
+            <range source_id="4" covered="yes" start_line="25" start_column="36" end_line="25" end_column="49" />
+          </ranges>
+        </function>
+      </functions>
+      <source_files>
+        <source_file id="0" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core\Extensions\ArrayExtensions.cs" />
+        <source_file id="1" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core\Extensions\ObjectExtensions.cs" />
+        <source_file id="2" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core\Extensions\DictionaryExtensions.cs" />
+        <source_file id="3" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core\Extensions\IEnumerableExtensions.cs" />
+        <source_file id="4" path="C:\Users\fabio.a.piras\source\PST\PiraSoft.Tools\PiraSoft.Tools.Core\Extensions\IListExtensions.cs" />
+      </source_files>
+    </module>
+  </modules>
+  <skipped_modules>
+    <skipped_module name="bcrypt.dll" path="bcrypt.dll" reason="no_symbols" />
+    <skipped_module name="clrjit.dll" path="clrjit.dll" reason="path_is_excluded" />
+    <skipped_module name="icu.dll" path="icu.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.adapterutilities.dll" path="microsoft.testplatform.adapterutilities.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.communicationutilities.dll" path="microsoft.testplatform.communicationutilities.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.coreutilities.dll" path="microsoft.testplatform.coreutilities.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.crossplatengine.dll" path="microsoft.testplatform.crossplatengine.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.platformabstractions.dll" path="microsoft.testplatform.platformabstractions.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.visualstudio.testplatform.common.dll" path="microsoft.visualstudio.testplatform.common.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.mstest.testadapter.dll" path="microsoft.visualstudio.testplatform.mstest.testadapter.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.mstestadapter.platformservices.dll" path="microsoft.visualstudio.testplatform.mstestadapter.platformservices.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.mstestadapter.platformservices.interface.dll" path="microsoft.visualstudio.testplatform.mstestadapter.platformservices.interface.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.objectmodel.dll" path="microsoft.visualstudio.testplatform.objectmodel.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.testframework.dll" path="microsoft.visualstudio.testplatform.testframework.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.testframework.extensions.dll" path="microsoft.visualstudio.testplatform.testframework.extensions.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.win32.primitives.dll" path="microsoft.win32.primitives.dll" reason="no_symbols" />
+    <skipped_module name="mscoreei.dll" path="mscoreei.dll" reason="path_is_excluded" />
+    <skipped_module name="mswsock.dll" path="mswsock.dll" reason="no_symbols" />
+    <skipped_module name="netstandard.dll" path="netstandard.dll" reason="no_symbols" />
+    <skipped_module name="newtonsoft.json.dll" path="newtonsoft.json.dll" reason="no_symbols" />
+    <skipped_module name="nuget.frameworks.dll" path="nuget.frameworks.dll" reason="no_symbols" />
+    <skipped_module name="psapi.dll" path="psapi.dll" reason="no_symbols" />
+    <skipped_module name="system.collections.concurrent.dll" path="system.collections.concurrent.dll" reason="no_symbols" />
+    <skipped_module name="system.collections.dll" path="system.collections.dll" reason="no_symbols" />
+    <skipped_module name="system.componentmodel.primitives.dll" path="system.componentmodel.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.componentmodel.typeconverter.dll" path="system.componentmodel.typeconverter.dll" reason="no_symbols" />
+    <skipped_module name="system.console.dll" path="system.console.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.debug.dll" path="system.diagnostics.debug.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.process.dll" path="system.diagnostics.process.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.textwritertracelistener.dll" path="system.diagnostics.textwritertracelistener.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.tracesource.dll" path="system.diagnostics.tracesource.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.tracing.dll" path="system.diagnostics.tracing.dll" reason="no_symbols" />
+    <skipped_module name="system.dynamic.runtime.dll" path="system.dynamic.runtime.dll" reason="no_symbols" />
+    <skipped_module name="system.globalization.dll" path="system.globalization.dll" reason="no_symbols" />
+    <skipped_module name="system.io.dll" path="system.io.dll" reason="no_symbols" />
+    <skipped_module name="system.io.filesystem.dll" path="system.io.filesystem.dll" reason="no_symbols" />
+    <skipped_module name="system.io.filesystem.primitives.dll" path="system.io.filesystem.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.linq.dll" path="system.linq.dll" reason="no_symbols" />
+    <skipped_module name="system.linq.expressions.dll" path="system.linq.expressions.dll" reason="no_symbols" />
+    <skipped_module name="system.memory.dll" path="system.memory.dll" reason="no_symbols" />
+    <skipped_module name="system.net.primitives.dll" path="system.net.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.net.sockets.dll" path="system.net.sockets.dll" reason="no_symbols" />
+    <skipped_module name="system.objectmodel.dll" path="system.objectmodel.dll" reason="no_symbols" />
+    <skipped_module name="system.private.corelib.dll" path="system.private.corelib.dll" reason="no_symbols" />
+    <skipped_module name="system.private.uri.dll" path="system.private.uri.dll" reason="no_symbols" />
+    <skipped_module name="system.private.xml.dll" path="system.private.xml.dll" reason="no_symbols" />
+    <skipped_module name="system.private.xml.linq.dll" path="system.private.xml.linq.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.dll" path="system.reflection.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.emit.ilgeneration.dll" path="system.reflection.emit.ilgeneration.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.emit.lightweight.dll" path="system.reflection.emit.lightweight.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.extensions.dll" path="system.reflection.extensions.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.primitives.dll" path="system.reflection.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.resources.resourcemanager.dll" path="system.resources.resourcemanager.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.dll" path="system.runtime.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.extensions.dll" path="system.runtime.extensions.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.interopservices.dll" path="system.runtime.interopservices.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.interopservices.runtimeinformation.dll" path="system.runtime.interopservices.runtimeinformation.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.loader.dll" path="system.runtime.loader.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.serialization.primitives.dll" path="system.runtime.serialization.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.text.encoding.dll" path="system.text.encoding.dll" reason="no_symbols" />
+    <skipped_module name="system.text.encoding.extensions.dll" path="system.text.encoding.extensions.dll" reason="no_symbols" />
+    <skipped_module name="system.text.regularexpressions.dll" path="system.text.regularexpressions.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.dll" path="system.threading.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.overlapped.dll" path="system.threading.overlapped.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.tasks.dll" path="system.threading.tasks.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.thread.dll" path="system.threading.thread.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.threadpool.dll" path="system.threading.threadpool.dll" reason="no_symbols" />
+    <skipped_module name="system.xml.readerwriter.dll" path="system.xml.readerwriter.dll" reason="no_symbols" />
+    <skipped_module name="system.xml.xdocument.dll" path="system.xml.xdocument.dll" reason="no_symbols" />
+    <skipped_module name="testhost.dll" path="testhost.dll" reason="path_is_excluded" />
+    <skipped_module name="ws2_32.dll" path="ws2_32.dll" reason="no_symbols" />
+    <skipped_module name="wshunix.dll" path="wshunix.dll" reason="no_symbols" />
+  </skipped_modules>
+</results>
