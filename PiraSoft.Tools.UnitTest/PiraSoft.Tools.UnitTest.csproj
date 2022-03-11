@@ -30,4 +30,19 @@
     <ProjectReference Include="..\PiraSoft.Tools.Data.SqlClient\PiraSoft.Tools.Data.SqlClient.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Data\Mapping\TestDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\Mapping\TestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestDataSet.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>

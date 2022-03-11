@@ -10,18 +10,20 @@ namespace PiraSoft.Tools.Data.Mapping;
 
 public class RelationMapping : MappingBase
 {
-    public RelationMapping(string relationName) : this(relationName, null)
+    public RelationMapping(string? relationName) : this(relationName, null)
     { }
 
-    public RelationMapping(string relationName, Dictionary<string, MappingBase>? mappings)
-    {
-        this.RelationName = relationName;
-        this.Mappings = mappings;
-    }
+    public RelationMapping(string? relationName, Dictionary<string, MappingBase>? mappings) : this(relationName, mappings, null)
+    { }
 
-    public RelationMapping(string relationName, Dictionary<string, MappingBase>? mappings, Func<object>? factory)
+    public RelationMapping(string? relationName, Dictionary<string, MappingBase>? mappings, Func<object>? factory)
     {
-        this.RelationName = relationName ?? throw new ArgumentNullException(relationName);
+        if (string.IsNullOrWhiteSpace(relationName))
+        {
+            throw new ArgumentException($"Parameter {nameof(relationName)} must contains a value.", nameof(relationName));
+        }
+
+        this.RelationName = relationName;
         this.Mappings = mappings;
         this.Factory = factory;
     }

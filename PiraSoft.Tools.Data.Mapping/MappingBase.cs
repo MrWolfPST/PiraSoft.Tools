@@ -14,6 +14,8 @@ public abstract class MappingBase
             return null;
         }
 
+        targetType = Nullable.GetUnderlyingType(targetType) ?? targetType;
+
         try
         {
             if (targetType.IsEnum)

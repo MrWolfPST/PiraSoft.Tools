@@ -9,7 +9,7 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping;
 public class ColumnMappingUnitTest
 {
     [TestMethod]
-    public void MapValidation()
+    public void Validation()
     {
         Assert.ThrowsException<ArgumentException>(() => new ColumnMapping(null), "null");
         Assert.ThrowsException<ArgumentException>(() => new ColumnMapping(""), "empty");

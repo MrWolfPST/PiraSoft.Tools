@@ -6,13 +6,13 @@ using System;
 namespace PiraSoft.Tools.UnitTest.Data.Mapping;
 
 [TestClass]
-public class ColumnMappingAttributeUnitTest
+public class RelationMappingAttributeUnitTest
 {
     [TestMethod]
     public void MappingValidation()
     {
-        var target = new ColumnMappingAttribute("Column");
+        var target = new RelationMappingAttribute("RelationName");
 
-        Assert.IsInstanceOfType(target.GetMapping(), typeof(ColumnMapping));
+        Assert.IsInstanceOfType(target.GetMapping(), typeof(RelationMapping));
     }
 }
