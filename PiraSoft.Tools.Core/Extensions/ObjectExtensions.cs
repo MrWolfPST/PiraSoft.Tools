@@ -63,5 +63,27 @@ namespace System
             TypeCode.Single => true,
             _ => false,
         };
+
+        /// <summary>
+        /// Retrieves the value of private field.
+        /// </summary>
+        /// <typeparam name="T">The type of field.</typeparam>
+        /// <param name="target">Target <see cref="object"/>.</param>
+        /// <param name="fieldName">The name of the field.</param>
+        /// <returns>Value of the field.</returns>
+        /// <exception cref="MissingFieldException">The field does not exist.</exception>
+        public static T? GetNotPublicFieldValue<T>(this object target, string fieldName)
+        {
+#pragma warning disable IDE0079 // Remove unnecessary suppression
+#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
+#pragma warning restore IDE0079 // Remove unnecessary suppression
+            var field = target.GetType().GetField(fieldName, Reflection.BindingFlags.Instance | Reflection.BindingFlags.Static | Reflection.BindingFlags.NonPublic)
+                ?? throw new MissingFieldException(target.GetType().FullName, fieldName);
+#pragma warning disable IDE0079 // Remove unnecessary suppression
+#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
+#pragma warning restore IDE0079 // Remove unnecessary suppression
+
+            return (T?)field.GetValue(target);
+        }
     }
 }

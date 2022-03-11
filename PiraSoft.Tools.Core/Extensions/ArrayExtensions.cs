@@ -9,8 +9,8 @@
         /// Searches for the specified object and returns the index of the first occurrence within the entire one-dimensional .
         /// </summary>
         /// <param name="array">The one-dimensional  to search.</param>
-        /// <param name="value">The object to locate in .</param>
-        /// <returns>The index of the first occurrence of  within the entire , if found; otherwise, the lower bound of the array minus 1.</returns>
+        /// <param name="value">The object to locate in.</param>
+        /// <returns>The index of the first occurrence of within the entire, if found; otherwise, the lower bound of the array minus 1.</returns>
         public static int IndexOf(this Array array, object value)
             => Array.IndexOf(array, value);
 

@@ -3,7 +3,7 @@
     /// <summary>
     /// A set of <see cref="IDictionary{TKey, TValue}"/> extension methods
     /// </summary>
-    public static class DictionaryExtensions
+    public static class IDictionaryExtensions
     {
         /// <summary>
         /// Merges dictionary with data of another dictionary
@@ -26,5 +26,16 @@
                     target[i.Key] = i.Value;
                 }
             });
+
+        /// <summary>
+        /// Gets the value associated with the specified key.
+        /// </summary>
+        /// <typeparam name="TKey">The type of keys in the dictionary.</typeparam>
+        /// <typeparam name="TValue">The type of values in the dictionary.</typeparam>
+        /// <param name="target">The target <see cref="IDictionary{TKey, TValue}"/> of search.</param>
+        /// <param name="key">The key whose value to get.</param>
+        /// <returns>The value associated with the specified key, if the key is found; otherwise, the default value for the <typeparamref name="TValue"/> type.</returns>
+        public static TValue? TryGetValue<TKey, TValue>(this IDictionary<TKey, TValue> target, TKey key)
+            => target.TryGetValue(key, out var retVal) ? retVal : default;
     }
 }

@@ -364,3 +364,8 @@ FodyWeavers.xsd
 
 #SonarQube
 .sonarqube/
+
+#Test
+TestResult/
+test.results.trx
+output.coverage.xml

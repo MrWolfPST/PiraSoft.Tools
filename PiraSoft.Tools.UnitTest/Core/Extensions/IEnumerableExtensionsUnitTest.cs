@@ -9,8 +9,8 @@ public class IEnumerableExtensionsUnitTest
     [TestMethod]
     public void ForEach()
     {
-        List<int>? target = new List<int>() { 1, 2, 3, 4 };
-        List<int>? test = new List<int>();
+        var target = new List<int>() { 1, 2, 3, 4 };
+        var test = new List<int>();
 
         target.ForEach(i => test.Add(i + 1));
 
