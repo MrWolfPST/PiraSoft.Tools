@@ -4,13 +4,17 @@ public static class DbParameterExtensions
 {
     public static string? Dump(this DbParameter target)
     {
-        if (target.Value != null)
-        {
-            return $"{target.ParameterName} = {target.FormatValue()}";
-        }
-        else if (target.IsOutput())
+        if (target.Direction == ParameterDirection.Output)
         {
             return $"{target.ParameterName} = {target.ParameterName} output";
+        }
+        else if (target.Direction == ParameterDirection.ReturnValue)
+        {
+            return $"{target.ParameterName} = ";
+        }
+        else if (target.Value != null)
+        {
+            return $"{target.ParameterName} = {target.FormatValue()}{(target.Direction == ParameterDirection.InputOutput ? " output" : "")}";
         }
         else
         {
@@ -24,24 +28,23 @@ public static class DbParameterExtensions
         {
             return "NULL";
         }
-        else if (target.GetType().IsEnum)
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        else if (target.Value.GetType().IsEnum)
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         {
-#pragma warning disable CS8605 // Unboxing a possibly null value.
-            return $"{(long)target.Value} /*{target.Value}*/";
+            return $"{target.Value:D} /*{target.Value}*/";
         }
-#pragma warning restore CS8605 // Unboxing a possibly null value.
-#pragma warning disable CS8604 // Possible null reference argument.
         else if (target.Value.IsNumericDatatype())
         {
-#pragma warning restore CS8604 // Possible null reference argument.
             return Convert.ToDecimal(target.Value).ToString(Globalization.CultureInfo.InvariantCulture);
+        }
+        else if (target.Value is DateTime)
+        {
+            return $"'{target.Value:yyyy-MM-dd HH:mm:ss}'";
         }
         else
         {
             return $"'{target.Value}'";
         }
     }
-
-    private static bool IsOutput(this DbParameter target)
-        => target.Direction == ParameterDirection.InputOutput || target.Direction == ParameterDirection.Output;
 }

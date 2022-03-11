@@ -1,73 +1,50 @@
 ﻿using Microsoft.Extensions.Logging;
-using System.Data;
 using System.Data.Common;
 
 namespace PiraSoft.Tools.Data;
 
-public sealed class TransactionalConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>
+#pragma warning disable IDE0079 // Remove unnecessary suppression
+#pragma warning disable S2436 // Methods should not have too many parameters
+#pragma warning restore IDE0079 // Remove unnecessary suppression
+public sealed class SessionConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>
     : ConnectionManagerImplementation<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>, IDisposable
         where TConnection : DbConnection
         where TDataReader : DbDataReader
         where TDataAdapter : DbDataAdapter
         where TCommand : DbCommand
         where TParameter : DbParameter
+#pragma warning disable IDE0079 // Remove unnecessary suppression
+#pragma warning restore S2436 // Methods should not have too many parameters
+#pragma warning restore IDE0079 // Remove unnecessary suppression
 {
     private readonly TConnection _connection;
-    private DbTransaction _transaction;
     private bool _disposedValue;
 
-    internal TransactionalConnectionManager(ConnectionManagerBase<TConnection, TDataReader, TDataAdapter, TCommand, TParameter> connectionManager, IsolationLevel isolationLevel, ILogger logger)
+    internal SessionConnectionManager(ConnectionManagerBase<TConnection, TDataReader, TDataAdapter, TCommand, TParameter> connectionManager, ILogger logger)
         : base(logger, connectionManager.Factory)
     {
         _connection = connectionManager.GetConnection();
         _connection.Open();
-        _transaction = _connection.BeginTransaction(isolationLevel);
-    }
-
-    public void Commit()
-    {
-        this.CheckTransaction();
-
-        _transaction.Commit();
-
-        this.Cleanup();
-    }
-
-    public void Rollback()
-    {
-        this.CheckTransaction();
-
-        _transaction.Rollback();
-
-        this.Cleanup();
     }
 
     protected internal override TConnection GetConnection()
-        => _connection;
+    {
+        if (_disposedValue)
+            throw new ObjectDisposedException(nameof(SessionConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>));
+
+        return _connection;
+    }
 
     protected override void DisposeConnection(TConnection connection)
     {
         //This class manage connection internally
     }
 
-    private void Cleanup()
+    public void Close()
     {
         _connection.Close();
-
-        _transaction.Dispose();
         _connection.Dispose();
-
-#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-        _transaction = null;
-#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
-    }
-
-    private void CheckTransaction()
-    {
-        if (_transaction == null)
-        {
-            throw new InvalidOperationException("Transaction is not longer available.");
-        }
+        _disposedValue = true;
     }
 
     #region Dispose Pattern
@@ -76,9 +53,9 @@ public sealed class TransactionalConnectionManager<TConnection, TDataReader, TDa
     {
         if (!_disposedValue)
         {
-            if (disposing && _transaction != null)
+            if (disposing)
             {
-                this.Rollback();
+                this.Close();
             }
 
             _disposedValue = true;

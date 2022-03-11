@@ -14,11 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{A98A561E-C188-427C-9D92-5687C1B713EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiraSoft.Tools.UnitTest", "PiraSoft.Tools.Core.UnitTest\PiraSoft.Tools.UnitTest.csproj", "{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiraSoft.Tools.UnitTest", "PiraSoft.Tools.UnitTest\PiraSoft.Tools.UnitTest.csproj", "{2DAEA77D-5D3C-4444-8DEE-F850C87DA77A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiraSoft.Tools.Data", "PiraSoft.Tools.Data.Abstractions\PiraSoft.Tools.Data.csproj", "{ED8AC236-8B50-46EE-9CA5-7894749D7828}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiraSoft.Tools.Data.SqlClient", "PiraSoft.Tools.Data.SqlClient\PiraSoft.Tools.Data.SqlClient.csproj", "{998C5B3C-197D-43E2-BB47-9AAABCDC1CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiraSoft.Tools.Data.Mapping", "PiraSoft.Tools.Data.Mapping\PiraSoft.Tools.Data.Mapping.csproj", "{E8523D3E-1D7A-4B1F-BE89-6761C0C67269}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{998C5B3C-197D-43E2-BB47-9AAABCDC1CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{998C5B3C-197D-43E2-BB47-9AAABCDC1CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{998C5B3C-197D-43E2-BB47-9AAABCDC1CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8523D3E-1D7A-4B1F-BE89-6761C0C67269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8523D3E-1D7A-4B1F-BE89-6761C0C67269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8523D3E-1D7A-4B1F-BE89-6761C0C67269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8523D3E-1D7A-4B1F-BE89-6761C0C67269}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
