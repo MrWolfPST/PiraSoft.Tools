@@ -22,9 +22,9 @@ internal class Parent
 
     public IEnumerable<Child>? Children { get; set; }
 
-    public Category? Category { get; set; }
+    public Child[]? ChildrenArray { get; set; }
 
-    public Category? SecondCategory { get; set; }
+    public Category? Category { get; set; }
 }
 
 internal class Child
@@ -33,11 +33,15 @@ internal class Child
 
     public Parent? Parent { get; set; }
 
-    public Values? First { get; set; }
+    public string? Description { get; set; }
 
-    public Values? Second { get; set; }
+    public Values? Value { get; set; }
 
-    public Values? Last { get; set; }
+    public Values? Prefix { get; set; }
+
+    public Values? Suffix { get; set; }
+
+    public Values? PrefixSuffix { get; set; }
 }
 
 internal class Values

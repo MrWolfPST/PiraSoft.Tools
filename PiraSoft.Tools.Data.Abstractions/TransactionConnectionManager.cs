@@ -51,7 +51,9 @@ public sealed class TransactionConnectionManager<TConnection, TDataReader, TData
     protected internal override TConnection GetConnection()
     {
         if (_disposedValue)
+        {
             throw new ObjectDisposedException(nameof(TransactionConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>));
+        }
 
         return _connection;
     }
@@ -74,7 +76,9 @@ public sealed class TransactionConnectionManager<TConnection, TDataReader, TData
     private void CheckTransaction()
     {
         if (_disposedValue)
+        {
             throw new ObjectDisposedException(nameof(TransactionConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>));
+        }
     }
 
     #region Dispose Pattern

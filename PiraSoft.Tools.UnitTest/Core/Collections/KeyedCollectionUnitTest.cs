@@ -18,19 +18,19 @@ public class KeyedCollectionUnitTest
     }
 
     [TestMethod]
-    public void Validation()
-    {
+    public void Validation() =>
 #pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-        Assert.ThrowsException<ArgumentNullException>(()=> new KeyedCollection<string, Model>(null));
+        Assert.ThrowsException<ArgumentNullException>(() => new KeyedCollection<string, Model>(null));
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
-    }
+
 
     [TestMethod]
     public void GetKeyForItemDelegate()
     {
-        var target = new KeyedCollection<string, Model>(i => i.Key);
-
-        target.Add(new Model("Key") { Value = "Value" });
+        var target = new KeyedCollection<string, Model>(i => i.Key)
+        {
+            new Model("Key") { Value = "Value" }
+        };
 
         Assert.AreEqual("Value", target["Key"].Value);
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PiraSoft.Tools.UnitTest.Data.Mapping;
+﻿namespace PiraSoft.Tools.UnitTest.Data.Mapping;
 
 public partial class TestDataSet
 {
@@ -26,37 +20,51 @@ public partial class TestDataSet
         parentRow.Name = "Name2";
         this.Parents.Rows.Add(parentRow);
 
+        parentRow = this.Parents.NewParentsRow();
+        parentRow.Id = 3;
+        parentRow.Name = "Name3";
+        this.Parents.Rows.Add(parentRow);
+
         var childrenRow = this.Children.NewChildrenRow();
         childrenRow.Id = 1;
         childrenRow.ParentId = 1;
-        childrenRow.FirstValue1 = $"FirstValue1.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.FirstValue2 = $"FirstValue2.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.SecondValue1 = $"SecondValue1.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.SecondValue2 = $"SecondValue2.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.Value1Last = $"Value1Last.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.Value2Last = $"Value2Last.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Description = $"{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value1 = $"Value1.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value2 = $"Value2.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue1 = $"PrefixValue1.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue2 = $"PrefixValue2.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value1Suffix = $"Value1Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value2Suffix = $"Value2Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue1Suffix = $"PrefixValue1Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue2Suffix = $"PrefixValue2Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
         this.Children.Rows.Add(childrenRow);
 
         childrenRow = this.Children.NewChildrenRow();
         childrenRow.Id = 2;
         childrenRow.ParentId = 1;
-        childrenRow.FirstValue1 = $"FirstValue1.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.FirstValue2 = $"FirstValue2.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.SecondValue1 = $"SecondValue1.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.SecondValue2 = $"SecondValue2.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.Value1Last = $"Value1Last.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.Value2Last = $"Value2Last.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Description = $"{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value1 = $"Value1.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value2 = $"Value2.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue1 = $"PrefixValue1.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue2 = $"PrefixValue2.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value1Suffix = $"Value1Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value2Suffix = $"Value2Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue1Suffix = $"PrefixValue1Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue2Suffix = $"PrefixValue2Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
         this.Children.Rows.Add(childrenRow);
 
         childrenRow = this.Children.NewChildrenRow();
         childrenRow.Id = 3;
         childrenRow.ParentId = 2;
-        childrenRow.FirstValue1 = $"FirstValue1.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.FirstValue2 = $"FirstValue2.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.SecondValue1 = $"SecondValue1.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.SecondValue2 = $"SecondValue2.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.Value1Last = $"Value1Last.{childrenRow.ParentId}.{childrenRow.Id}";
-        childrenRow.Value2Last = $"Value2Last.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Description = $"{childrenRow.ParentId}.{childrenRow.Id}";
+        //childrenRow.Value1 = $"Value1.{childrenRow.ParentId}.{childrenRow.Id}";
+        //childrenRow.Value2 = $"Value2.{childrenRow.ParentId}.{childrenRow.Id}";
+        //childrenRow.PrefixValue1 = $"PrefixValue1.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.PrefixValue2 = $"PrefixValue2.{childrenRow.ParentId}.{childrenRow.Id}";
+        childrenRow.Value1Suffix = $"Value1Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        //childrenRow.Value2Suffix = $"Value2Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        //childrenRow.PrefixValue1Suffix = $"PrefixValue1Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
+        //childrenRow.PrefixValue2Suffix = $"PrefixValue2Suffix.{childrenRow.ParentId}.{childrenRow.Id}";
         this.Children.Rows.Add(childrenRow);
     }
 }

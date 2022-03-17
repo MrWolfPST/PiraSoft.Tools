@@ -16,7 +16,7 @@ public class ColumnMapping : MappingBase
         this.ColumnName = columnName;
     }
 
-    public string ColumnName { get; }
+    public string ColumnName { get; internal set; }
 
     protected internal override void Map(object target, PropertyInfo propertyInfo, DataRow row)
     {

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PiraSoft.Tools.Data.Mapping;
 
@@ -13,10 +8,10 @@ public class RelationMapping : MappingBase
     public RelationMapping(string? relationName) : this(relationName, null)
     { }
 
-    public RelationMapping(string? relationName, Dictionary<string, MappingBase>? mappings) : this(relationName, mappings, null)
+    public RelationMapping(string? relationName, TypeMappings? mappings) : this(relationName, mappings, null)
     { }
 
-    public RelationMapping(string? relationName, Dictionary<string, MappingBase>? mappings, Func<object>? factory)
+    public RelationMapping(string? relationName, TypeMappings? mappings, Func<object>? factory)
     {
         if (string.IsNullOrWhiteSpace(relationName))
         {
@@ -30,12 +25,22 @@ public class RelationMapping : MappingBase
 
     public string RelationName { get; }
 
-    public Dictionary<string, MappingBase>? Mappings { get; }
+    public TypeMappings? Mappings { get; }
 
     public Func<object>? Factory { get; }
 
     protected internal override void Map(object target, PropertyInfo propertyInfo, DataRow row)
     {
+        if (this.Mappings != null && propertyInfo.PropertyType != this.Mappings.Type)
+        {
+            throw new ArgumentException($"Type of {propertyInfo.Name} is not the same of type specified in {nameof(this.Mappings)}.");
+        }
+
+        if (!row.Table.ParentRelations.Contains(this.RelationName))
+        {
+            throw new ArgumentException($"Unable to find the {this.RelationName} relation.");
+        }
+
         var relatedRow = row.GetParentRow(this.RelationName);
         var factory = this.Factory
                 ?? (() => Activator.CreateInstance(propertyInfo.PropertyType)

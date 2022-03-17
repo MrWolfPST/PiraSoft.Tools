@@ -30,7 +30,9 @@ public sealed class SessionConnectionManager<TConnection, TDataReader, TDataAdap
     protected internal override TConnection GetConnection()
     {
         if (_disposedValue)
+        {
             throw new ObjectDisposedException(nameof(SessionConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>));
+        }
 
         return _connection;
     }

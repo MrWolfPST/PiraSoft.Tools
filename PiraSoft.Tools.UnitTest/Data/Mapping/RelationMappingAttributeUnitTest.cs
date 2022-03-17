@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PiraSoft.Tools.Data.Mapping;
 using PiraSoft.Tools.Data.Mapping.Attributes;
-using System;
 
 namespace PiraSoft.Tools.UnitTest.Data.Mapping;
 

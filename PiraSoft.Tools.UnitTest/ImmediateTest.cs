@@ -1,17 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PiraSoft.Tools.Data.Mapping;
 using PiraSoft.Tools.Data.Mapping.Attributes;
+using System;
 
 namespace PiraSoft.Tools.UnitTest.Data.Mapping;
 
 [TestClass]
-public class ColumnMappingAttributeUnitTest
+public class ImmediateTests
 {
     [TestMethod]
-    public void MappingValidation()
+    public void Immediate()
     {
-        var target = new ColumnMappingAttribute("Column");
-
-        Assert.IsInstanceOfType(target.GetMapping(), typeof(ColumnMapping));
+        //Assert.IsTrue(typeof(string).IsValueType, "string");
+        Assert.IsTrue(typeof(DateTime).IsValueType, "datetime");
     }
 }

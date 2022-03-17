@@ -1,16 +1,33 @@
-﻿using System.Data;
+﻿using System.Collections.ObjectModel;
+using System.Data;
 
 namespace PiraSoft.Tools.Data.Mapping;
 
-//TODO: Implement internal type mapping cache
-//TODO: Implement public type mapping catalog
-
 public static class Mapper
 {
-    public static object Map(Func<object> factory, DataRow row)
-        => Map(factory, row, new Dictionary<string, MappingBase>());
+    private static readonly IDictionary<Type, TypeMappings> _typeMappingsCatalog = new Dictionary<Type, TypeMappings>();
 
-    public static object Map(Func<object> factory, DataRow row, Dictionary<string, MappingBase>? mappings)
+    public static IReadOnlyDictionary<Type, TypeMappings> TypeMappingsCatalog { get; } = new ReadOnlyDictionary<Type, TypeMappings>(_typeMappingsCatalog);
+
+    public static TypeMappings AddTypeMappings<T>()
+        => AddTypeMappings(typeof(T));
+
+    public static TypeMappings AddTypeMappings(Type type)
+        => AddTypeMappings(TypeMappings.Generate(type));
+
+    public static TypeMappings AddTypeMappings(TypeMappings typeMappings)
+    {
+        _typeMappingsCatalog.AddOrUpdate(typeMappings.Type, typeMappings);
+        return typeMappings;
+    }
+
+    public static TypeMappings EnsureTypeMappings(Type type)
+        => _typeMappingsCatalog.TryGetValue(type) ?? AddTypeMappings(type);
+
+    public static object Map(Func<object> factory, DataRow row)
+        => Map(factory, row, null);
+
+    public static object Map(Func<object> factory, DataRow row, TypeMappings? mappings)
     {
         if (factory == null)
         {
@@ -30,13 +47,20 @@ public static class Mapper
     }
 
     public static void Map(object target, DataRow row)
-        => Map(target, row, new Dictionary<string, MappingBase>());
+        => Map(target, row, null);
 
-    public static void Map(object target, DataRow row, Dictionary<string, MappingBase>? mappings)
+    public static void Map(object target, DataRow row, TypeMappings? mappings)
     {
         if (target == null)
         {
             throw new ArgumentNullException(nameof(target));
+        }
+
+        mappings ??= EnsureTypeMappings(target.GetType());
+
+        if (target.GetType() != mappings.Type)
+        {
+            throw new ArgumentException($"Type of {nameof(target)} is not the same of type specified in {nameof(mappings)}.");
         }
 
         if (row == null)
@@ -44,15 +68,6 @@ public static class Mapper
             throw new ArgumentNullException(nameof(row));
         }
 
-        GetMappings(target.GetType(), mappings).ForEach(i => i.Map(target, row));
-    }
-
-    private static PropertyInfoMappingCollection GetMappings(Type type, Dictionary<string, MappingBase>? mappings = null, string fieldNamePattern = "{0}")
-    {
-        var retVal = new PropertyInfoMappingCollection();
-
-        type.GetProperties().Where(i => i.CanWrite).ForEach(i => retVal.AddMapping(i, mappings, fieldNamePattern));
-
-        return retVal;
+        mappings.Mappings.ForEach(i => i.Map(target, row));
     }
 }

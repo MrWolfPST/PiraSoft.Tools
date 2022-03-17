@@ -34,7 +34,7 @@ public static class DbParameterExtensions
         {
             return $"{target.Value:D} /*{target.Value}*/";
         }
-        else if (target.Value.IsNumericDatatype())
+        else if (target.Value.GetType().IsNumericDatatype())
         {
             return Convert.ToDecimal(target.Value).ToString(Globalization.CultureInfo.InvariantCulture);
         }

@@ -77,4 +77,25 @@ public class IDictionaryExtensionsUnitTest
         Assert.IsNull(target.TryGetValue(5));
         Assert.AreEqual("Target Two", target.TryGetValue(2));
     }
+
+    [TestMethod]
+    public void AddOrUpdateAdd()
+    {
+        var target = new Dictionary<string, object>();
+
+        target.AddOrUpdate("Key1", new object());
+
+        Assert.AreEqual(1, target.Count);
+    }
+
+    [TestMethod]
+    public void AddOrUpdateUpdate()
+    {
+        var target = new Dictionary<string, object>();
+
+        target.AddOrUpdate("Key1", new object());
+        target.AddOrUpdate("Key1", new object());
+
+        Assert.AreEqual(1, target.Count);
+    }
 }

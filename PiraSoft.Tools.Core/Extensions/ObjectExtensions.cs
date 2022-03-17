@@ -10,7 +10,7 @@ namespace System
         /// <summary>
         /// Create an instance of <see cref="NotImplementedException"/> with message builded based on call context.
         /// </summary>
-        /// <param name="target">Object source of exception.</param>
+        /// <param name="target">Current <see cref="object"/>.</param>
         /// <param name="caller">Member source of exception.</param>
         /// <returns>An instance of <see cref="NotImplementedException"/>.</returns>
         public static NotImplementedException GetNotImplementedException(this object target, [CallerMemberName] string? caller = null)
@@ -19,7 +19,7 @@ namespace System
         /// <summary>
         /// Create an instance of <see cref="NotSupportedException"/> with message builded based on call context.
         /// </summary>
-        /// <param name="target">Object source of exception.</param>
+        /// <param name="target">Current <see cref="object"/>.</param>
         /// <param name="caller">Member source of exception.</param>
         /// <returns>An instance of <see cref="NotSupportedException"/>.</returns>
         public static NotSupportedException GetNotSupportedException(this object target, [CallerMemberName] string? caller = null)
@@ -29,7 +29,7 @@ namespace System
         /// Throw an instance of <see cref="NotImplementedException"/> with message builded based on call context.
         /// Uses <see cref="GetNotImplementedException(object, string?)"/> for build exception instance.
         /// </summary>
-        /// <param name="target">Object source of exception.</param>
+        /// <param name="target">Current <see cref="object"/>.</param>
         /// <param name="caller">Member source of exception.</param>
         public static void ThrowNotImplementedException(this object target, [CallerMemberName] string? caller = null)
             => throw target.GetNotImplementedException(caller);
@@ -38,37 +38,16 @@ namespace System
         /// Throw an instance of <see cref="NotSupportedException"/> with message builded based on call context.
         /// Uses <see cref="GetNotSupportedException(object, string?)"/> for build exception instance.
         /// </summary>
-        /// <param name="target">Object source of exception.</param>
+        /// <param name="target">Current <see cref="object"/>.</param>
         /// <param name="caller">Member source of exception.</param>
         public static void ThrowNotSupportedException(this object target, [CallerMemberName] string? caller = null)
             => throw target.GetNotSupportedException(caller);
 
         /// <summary>
-        /// Gets a value that indicates whether the type of object is a numeric data type.
-        /// </summary>
-        /// <param name="obj">Target <see cref="object"/>.</param>
-        /// <returns>true if the type of object is a numeric data type; otherwise, false.</returns>
-        public static bool IsNumericDatatype(this object obj) => Type.GetTypeCode(obj.GetType()) switch
-        {
-            TypeCode.Byte or
-            TypeCode.SByte or
-            TypeCode.UInt16 or
-            TypeCode.UInt32 or
-            TypeCode.UInt64 or
-            TypeCode.Int16 or
-            TypeCode.Int32 or
-            TypeCode.Int64 or
-            TypeCode.Decimal or
-            TypeCode.Double or
-            TypeCode.Single => true,
-            _ => false,
-        };
-
-        /// <summary>
         /// Retrieves the value of private field.
         /// </summary>
         /// <typeparam name="T">The type of field.</typeparam>
-        /// <param name="target">Target <see cref="object"/>.</param>
+        /// <param name="target">Current <see cref="object"/>.</param>
         /// <param name="fieldName">The name of the field.</param>
         /// <returns>Value of the field.</returns>
         /// <exception cref="MissingFieldException">The field does not exist.</exception>

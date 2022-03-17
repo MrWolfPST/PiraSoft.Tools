@@ -24,4 +24,5 @@ internal static class SubstituteExtensions
         }
 
         return value.Returns(x => Task.FromException<T>(exception));
-    }}
+    }
+}
