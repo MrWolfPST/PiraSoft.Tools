@@ -646,23 +646,31 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             private global::System.Data.DataColumn columnParentId;
             
+            private global::System.Data.DataColumn columnDescription;
+            
             private global::System.Data.DataColumn columnValue1;
             
             private global::System.Data.DataColumn columnValue2;
+            
+            private global::System.Data.DataColumn columnValue3;
             
             private global::System.Data.DataColumn columnPrefixValue1;
             
             private global::System.Data.DataColumn columnPrefixValue2;
             
+            private global::System.Data.DataColumn columnPrefixValue3;
+            
             private global::System.Data.DataColumn columnValue1Suffix;
             
             private global::System.Data.DataColumn columnValue2Suffix;
+            
+            private global::System.Data.DataColumn columnValue3Suffix;
             
             private global::System.Data.DataColumn columnPrefixValue1Suffix;
             
             private global::System.Data.DataColumn columnPrefixValue2Suffix;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnPrefixValue3Suffix;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -715,6 +723,14 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn Value1Column {
                 get {
                     return this.columnValue1;
@@ -726,6 +742,14 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             public global::System.Data.DataColumn Value2Column {
                 get {
                     return this.columnValue2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Value3Column {
+                get {
+                    return this.columnValue3;
                 }
             }
             
@@ -747,6 +771,14 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrefixValue3Column {
+                get {
+                    return this.columnPrefixValue3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn Value1SuffixColumn {
                 get {
                     return this.columnValue1Suffix;
@@ -758,6 +790,14 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             public global::System.Data.DataColumn Value2SuffixColumn {
                 get {
                     return this.columnValue2Suffix;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Value3SuffixColumn {
+                get {
+                    return this.columnValue3Suffix;
                 }
             }
             
@@ -779,9 +819,9 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn PrefixValue3SuffixColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnPrefixValue3Suffix;
                 }
             }
             
@@ -822,20 +862,24 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ChildrenRow AddChildrenRow(int Id, ParentsRow parentParentsRowByParentChildren, string Value1, string Value2, string PrefixValue1, string PrefixValue2, string Value1Suffix, string Value2Suffix, string PrefixValue1Suffix, string PrefixValue2Suffix, string Description) {
+            public ChildrenRow AddChildrenRow(int Id, ParentsRow parentParentsRowByParentChildren, string Description, string Value1, string Value2, string Value3, string PrefixValue1, string PrefixValue2, string PrefixValue3, string Value1Suffix, string Value2Suffix, string Value3Suffix, string PrefixValue1Suffix, string PrefixValue2Suffix, string PrefixValue3Suffix) {
                 ChildrenRow rowChildrenRow = ((ChildrenRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
                         null,
+                        Description,
                         Value1,
                         Value2,
+                        Value3,
                         PrefixValue1,
                         PrefixValue2,
+                        PrefixValue3,
                         Value1Suffix,
                         Value2Suffix,
+                        Value3Suffix,
                         PrefixValue1Suffix,
                         PrefixValue2Suffix,
-                        Description};
+                        PrefixValue3Suffix};
                 if ((parentParentsRowByParentChildren != null)) {
                     columnValuesArray[1] = parentParentsRowByParentChildren[0];
                 }
@@ -863,15 +907,19 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
                 this.columnParentId = base.Columns["ParentId"];
+                this.columnDescription = base.Columns["Description"];
                 this.columnValue1 = base.Columns["Value1"];
                 this.columnValue2 = base.Columns["Value2"];
+                this.columnValue3 = base.Columns["Value3"];
                 this.columnPrefixValue1 = base.Columns["PrefixValue1"];
                 this.columnPrefixValue2 = base.Columns["PrefixValue2"];
+                this.columnPrefixValue3 = base.Columns["PrefixValue3"];
                 this.columnValue1Suffix = base.Columns["Value1Suffix"];
                 this.columnValue2Suffix = base.Columns["Value2Suffix"];
+                this.columnValue3Suffix = base.Columns["Value3Suffix"];
                 this.columnPrefixValue1Suffix = base.Columns["PrefixValue1Suffix"];
                 this.columnPrefixValue2Suffix = base.Columns["PrefixValue2Suffix"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnPrefixValue3Suffix = base.Columns["PrefixValue3Suffix"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -881,24 +929,32 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
                 base.Columns.Add(this.columnId);
                 this.columnParentId = new global::System.Data.DataColumn("ParentId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnParentId);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
                 this.columnValue1 = new global::System.Data.DataColumn("Value1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValue1);
                 this.columnValue2 = new global::System.Data.DataColumn("Value2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValue2);
+                this.columnValue3 = new global::System.Data.DataColumn("Value3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValue3);
                 this.columnPrefixValue1 = new global::System.Data.DataColumn("PrefixValue1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrefixValue1);
                 this.columnPrefixValue2 = new global::System.Data.DataColumn("PrefixValue2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrefixValue2);
+                this.columnPrefixValue3 = new global::System.Data.DataColumn("PrefixValue3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrefixValue3);
                 this.columnValue1Suffix = new global::System.Data.DataColumn("Value1Suffix", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValue1Suffix);
                 this.columnValue2Suffix = new global::System.Data.DataColumn("Value2Suffix", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValue2Suffix);
+                this.columnValue3Suffix = new global::System.Data.DataColumn("Value3Suffix", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValue3Suffix);
                 this.columnPrefixValue1Suffix = new global::System.Data.DataColumn("PrefixValue1Suffix", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrefixValue1Suffix);
                 this.columnPrefixValue2Suffix = new global::System.Data.DataColumn("PrefixValue2Suffix", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrefixValue2Suffix);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnPrefixValue3Suffix = new global::System.Data.DataColumn("PrefixValue3Suffix", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrefixValue3Suffix);
                 this.columnId.AllowDBNull = false;
                 this.columnParentId.AllowDBNull = false;
             }
@@ -1431,6 +1487,22 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description {
+                get {
+                    try {
+                        return ((string)(this[this.tableChildren.DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'Children\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChildren.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Value1 {
                 get {
                     try {
@@ -1458,6 +1530,22 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
                 }
                 set {
                     this[this.tableChildren.Value2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Value3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChildren.Value3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Value3\' in table \'Children\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChildren.Value3Column] = value;
                 }
             }
             
@@ -1495,6 +1583,22 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrefixValue3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChildren.PrefixValue3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrefixValue3\' in table \'Children\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChildren.PrefixValue3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Value1Suffix {
                 get {
                     try {
@@ -1522,6 +1626,22 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
                 }
                 set {
                     this[this.tableChildren.Value2SuffixColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Value3Suffix {
+                get {
+                    try {
+                        return ((string)(this[this.tableChildren.Value3SuffixColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Value3Suffix\' in table \'Children\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChildren.Value3SuffixColumn] = value;
                 }
             }
             
@@ -1559,17 +1679,17 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Description {
+            public string PrefixValue3Suffix {
                 get {
                     try {
-                        return ((string)(this[this.tableChildren.DescriptionColumn]));
+                        return ((string)(this[this.tableChildren.PrefixValue3SuffixColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'Children\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrefixValue3Suffix\' in table \'Children\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableChildren.DescriptionColumn] = value;
+                    this[this.tableChildren.PrefixValue3SuffixColumn] = value;
                 }
             }
             
@@ -1582,6 +1702,18 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["ParentChildren"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescriptionNull() {
+                return this.IsNull(this.tableChildren.DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescriptionNull() {
+                this[this.tableChildren.DescriptionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1610,6 +1742,18 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsValue3Null() {
+                return this.IsNull(this.tableChildren.Value3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetValue3Null() {
+                this[this.tableChildren.Value3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPrefixValue1Null() {
                 return this.IsNull(this.tableChildren.PrefixValue1Column);
             }
@@ -1630,6 +1774,18 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPrefixValue2Null() {
                 this[this.tableChildren.PrefixValue2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrefixValue3Null() {
+                return this.IsNull(this.tableChildren.PrefixValue3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrefixValue3Null() {
+                this[this.tableChildren.PrefixValue3Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1658,6 +1814,18 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsValue3SuffixNull() {
+                return this.IsNull(this.tableChildren.Value3SuffixColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetValue3SuffixNull() {
+                this[this.tableChildren.Value3SuffixColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPrefixValue1SuffixNull() {
                 return this.IsNull(this.tableChildren.PrefixValue1SuffixColumn);
             }
@@ -1682,14 +1850,14 @@ namespace PiraSoft.Tools.UnitTest.Data.Mapping {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableChildren.DescriptionColumn);
+            public bool IsPrefixValue3SuffixNull() {
+                return this.IsNull(this.tableChildren.PrefixValue3SuffixColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableChildren.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetPrefixValue3SuffixNull() {
+                this[this.tableChildren.PrefixValue3SuffixColumn] = global::System.Convert.DBNull;
             }
         }
         

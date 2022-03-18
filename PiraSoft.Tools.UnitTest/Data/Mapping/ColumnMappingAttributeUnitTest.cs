@@ -10,8 +10,10 @@ public class ColumnMappingAttributeUnitTest
     [TestMethod]
     public void MappingValidation()
     {
-        var target = new ColumnMappingAttribute("Column");
+        var attribute = new ColumnMappingAttribute("Column");
+        var target = attribute.GetMapping() as ColumnMapping;
 
-        Assert.IsInstanceOfType(target.GetMapping(), typeof(ColumnMapping));
+        Assert.IsNotNull(target);
+        Assert.AreEqual("Column", target.ColumnName);
     }
 }

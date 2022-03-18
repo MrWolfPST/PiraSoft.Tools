@@ -10,8 +10,10 @@ public class RelationMappingAttributeUnitTest
     [TestMethod]
     public void MappingValidation()
     {
-        var target = new RelationMappingAttribute("RelationName");
+        var attribute = new RelationMappingAttribute("RelationName");
+        var target = attribute.GetMapping() as RelationMapping;
 
-        Assert.IsInstanceOfType(target.GetMapping(), typeof(RelationMapping));
+        Assert.IsNotNull(target);
+        Assert.AreEqual("RelationName", target.RelationName);
     }
 }

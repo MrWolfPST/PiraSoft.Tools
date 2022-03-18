@@ -1,6 +1,5 @@
 ﻿namespace PiraSoft.Tools.Data.Mapping.Attributes;
 
-
 public class RelationMappingAttribute : MappingAttribute
 {
     private readonly RelationMapping _mapping;

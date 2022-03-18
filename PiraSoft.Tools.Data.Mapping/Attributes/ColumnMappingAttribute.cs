@@ -1,6 +1,5 @@
 ﻿namespace PiraSoft.Tools.Data.Mapping.Attributes;
 
-
 public class ColumnMappingAttribute : MappingAttribute
 {
     private readonly ColumnMapping _mapping;
