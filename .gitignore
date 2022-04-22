@@ -369,3 +369,4 @@ FodyWeavers.xsd
 TestResult/
 test.results.trx
 output.coverage.xml
+/TODO.txt

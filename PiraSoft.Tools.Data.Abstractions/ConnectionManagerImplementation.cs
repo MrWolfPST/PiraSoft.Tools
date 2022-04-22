@@ -114,12 +114,15 @@ public abstract class ConnectionManagerImplementation<TConnection, TDataReader, 
 
     public async Task<DataTable> GetDataTableAsync(string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, IEnumerable<TParameter>? parameters = default, CancellationToken cancellationToken = default)
     {
-        var dt = new DataTable();
-        var dr = await this.ExecuteAsync(async (c) => (TDataReader)(await c.ExecuteReaderAsync(cancellationToken)), commandText, commandType, commandTimeout, parameters);
+        //var dt = new DataTable();
+        //var dr = await this.ExecuteAsync(async (c) => (TDataReader)(await c.ExecuteReaderAsync(cancellationToken)), commandText, commandType, commandTimeout, parameters);
 
-        dt.Load(dr);
+        //dt.Load(dr);
 
-        return dt;
+        //return dt;
+        var ds = await this.GetDataSetAsync(commandText, commandType, commandTimeout, parameters);
+
+        return ds.Tables[0]; //TODO: Check if command not return resultset
     }
 
     public async Task<DataRow?> GetDataRowAsync(string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, IEnumerable<TParameter>? parameters = default, CancellationToken cancellationToken = default)

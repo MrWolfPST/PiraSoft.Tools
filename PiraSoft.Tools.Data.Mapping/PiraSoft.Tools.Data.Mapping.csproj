@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PiraSoft.Tools.Core\PiraSoft.Tools.Core.csproj" />
+    <ProjectReference Include="..\PiraSoft.Tools.Data.Abstractions\PiraSoft.Tools.Data.csproj" />
   </ItemGroup>
 
 </Project>

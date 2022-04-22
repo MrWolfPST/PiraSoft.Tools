@@ -24,11 +24,16 @@ public static class Mapper
     public static TypeMappings EnsureTypeMappings(Type type)
         => _typeMappingsCatalog.TryGetValue(type) ?? AddTypeMappings(type);
 
-    public static object Map(Func<object> factory, DataRow row)
+    public static object? Map(Func<object> factory, DataRow? row)
         => Map(factory, row, null);
 
-    public static object Map(Func<object> factory, DataRow row, TypeMappings? mappings)
+    public static object? Map(Func<object> factory, DataRow? row, TypeMappings? mappings)
     {
+        if (row == null)
+        {
+            return null;
+        }
+
         if (factory == null)
         {
             throw new ArgumentNullException(nameof(factory));
@@ -46,11 +51,16 @@ public static class Mapper
         return retVal;
     }
 
-    public static void Map(object target, DataRow row)
+    public static void Map(object target, DataRow? row)
         => Map(target, row, null);
 
-    public static void Map(object target, DataRow row, TypeMappings? mappings)
+    public static void Map(object target, DataRow? row, TypeMappings? mappings)
     {
+        if (row == null)
+        {
+            throw new ArgumentNullException(nameof(row));
+        }
+            
         if (target == null)
         {
             throw new ArgumentNullException(nameof(target));
@@ -70,4 +80,16 @@ public static class Mapper
 
         mappings.Mappings.ForEach(i => i.Map(target, row));
     }
+
+    public static T Map<T>(DataRow? row) where T : new()
+        => Map<T>(() => new T(), row, null);
+
+    public static T Map<T>(DataRow? row, TypeMappings? mappings) where T : new()
+        => Map<T>(() => new T(), row, mappings);
+
+    public static T Map<T>(Func<T> factory, DataRow? row)
+        => Map<T>(factory, row, null);
+
+    public static T Map<T>(Func<T> factory, DataRow? row, TypeMappings? mappings)
+        => (T)Map(factory, row, mappings);
 }

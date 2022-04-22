@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		SonarQube.ps1 = SonarQube.ps1
+		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{A98A561E-C188-427C-9D92-5687C1B713EF}"
@@ -20,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiraSoft.Tools.Data", "Pira
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiraSoft.Tools.Data.SqlClient", "PiraSoft.Tools.Data.SqlClient\PiraSoft.Tools.Data.SqlClient.csproj", "{998C5B3C-197D-43E2-BB47-9AAABCDC1CF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiraSoft.Tools.Data.Mapping", "PiraSoft.Tools.Data.Mapping\PiraSoft.Tools.Data.Mapping.csproj", "{E8523D3E-1D7A-4B1F-BE89-6761C0C67269}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiraSoft.Tools.Data.Mapping", "PiraSoft.Tools.Data.Mapping\PiraSoft.Tools.Data.Mapping.csproj", "{E8523D3E-1D7A-4B1F-BE89-6761C0C67269}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
