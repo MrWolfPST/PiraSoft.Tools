@@ -1,6 +1,6 @@
-﻿using System.Data;
+﻿using PiraSoft.Tools.Data.Mapping;
 
-namespace PiraSoft.Tools.Data.Mapping.Extensions;
+namespace System.Data;
 
 public static class RowExtensions
 {
@@ -16,15 +16,15 @@ public static class RowExtensions
     public static void Map(this DataRow row, object target, TypeMappings? mappings)
         => Mapper.Map(target, row, mappings);
 
-    public static T Map<T>(this DataRow row) where T : new()
-        => row.Map<T>(() => new T(), null);
+    public static T? Map<T>(this DataRow row) where T : new()
+        => row.Map(() => new T(), null);
 
-    public static T Map<T>(this DataRow row, TypeMappings? mappings) where T : new()
-        => row.Map<T>(() => new T(), mappings);
+    public static T? Map<T>(this DataRow row, TypeMappings? mappings) where T : new()
+        => row.Map(() => new T(), mappings);
 
-    public static T Map<T>(this DataRow row, Func<T> factory)
-        => row.Map<T>(factory, null);
+    public static T? Map<T>(this DataRow row, Func<T> factory)
+        => row.Map(factory, null);
 
-    public static T Map<T>(this DataRow row, Func<T> factory, TypeMappings? mappings)
-        => Mapper.Map<T>(factory, row, mappings);
+    public static T? Map<T>(this DataRow row, Func<T> factory, TypeMappings? mappings)
+        => Mapper.Map(factory, row, mappings);
 }

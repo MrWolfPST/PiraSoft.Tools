@@ -1,7 +1,8 @@
-﻿using System.Data;
+﻿using PiraSoft.Tools.Data.Mapping;
+using System.Data;
 using System.Data.Common;
 
-namespace PiraSoft.Tools.Data.Mapping;
+namespace PiraSoft.Tools.Data;
 
 public static class CommandGetDataSetAsyncExtensions
 {
@@ -35,5 +36,5 @@ public static class CommandGetDataSetAsyncExtensions
     public static async Task<IEnumerable<T>> ListAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, TypeMappings? mappings, CancellationToken cancellationToken = default)
         where TDataReader : DbDataReader
         where TParameter : DbParameter
-        => from r in (await target.GetDataTableAsync(cancellationToken)).AsEnumerable() select (T)Mapper.Map(factory, target.GetDataRow(), mappings);
+        => from r in (await target.GetDataTableAsync(cancellationToken)).AsEnumerable() select Mapper.Map(factory, target.GetDataRow(), mappings);
 }

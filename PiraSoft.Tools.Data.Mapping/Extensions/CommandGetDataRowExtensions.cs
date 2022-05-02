@@ -1,6 +1,7 @@
-﻿using System.Data.Common;
+﻿using PiraSoft.Tools.Data.Mapping;
+using System.Data.Common;
 
-namespace PiraSoft.Tools.Data.Mapping;
+namespace PiraSoft.Tools.Data;
 
 public static class CommandGetDataRowExtensions
 {
@@ -14,25 +15,25 @@ public static class CommandGetDataRowExtensions
         where TParameter : DbParameter
         => Mapper.Map(factory, target.GetDataRow(), mappings);
 
-    public static T Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target)
+    public static T? Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target)
         where T : new()
         where TDataReader : DbDataReader
         where TParameter : DbParameter
         => target.Get(() => new T(), null);
 
-    public static T Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, TypeMappings? mappings)
+    public static T? Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, TypeMappings? mappings)
         where T : new()
         where TDataReader : DbDataReader
         where TParameter : DbParameter
         => target.Get(() => new T(), mappings);
 
-    public static T Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory)
+    public static T? Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory)
         where TDataReader : DbDataReader
         where TParameter : DbParameter
         => target.Get(factory, (TypeMappings?)null);
 
-    public static T Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, TypeMappings? mappings)
+    public static T? Get<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, TypeMappings? mappings)
         where TDataReader : DbDataReader
         where TParameter : DbParameter
-        => (T)Mapper.Map(factory, target.GetDataRow(), mappings);
+        => Mapper.Map(factory, target.GetDataRow(), mappings);
 }

@@ -23,16 +23,9 @@
         /// <exception cref="ArgumentNullException"><paramref name="target"/> or <paramref name="arrayType"/> is null</exception>
         public static Array ToArray(this IList target, Type arrayType)
         {
-            if (target == null)
-            {
-                throw new ArgumentNullException(nameof(target));
-            }
-
-            if (arrayType == null)
-            {
-                throw new ArgumentNullException(nameof(arrayType));
-            }
-
+            ArgumentNullException.ThrowIfNull(target);
+            ArgumentNullException.ThrowIfNull(arrayType);
+            
             var retVal = Array.CreateInstance(arrayType, target.Count);
 
             target.CopyTo(retVal, 0);

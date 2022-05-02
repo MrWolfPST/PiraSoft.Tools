@@ -1,7 +1,8 @@
-﻿using System.Data;
+﻿using PiraSoft.Tools.Data.Mapping;
+using System.Data;
 using System.Data.Common;
 
-namespace PiraSoft.Tools.Data.Mapping;
+namespace PiraSoft.Tools.Data;
 
 public static class CommandGetDataSetExtensions
 {
@@ -35,5 +36,5 @@ public static class CommandGetDataSetExtensions
     public static IEnumerable<T> List<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, TypeMappings? mappings)
         where TDataReader : DbDataReader
         where TParameter : DbParameter
-        => from r in target.GetDataTable().AsEnumerable() select (T)Mapper.Map(factory, target.GetDataRow(), mappings);
+        => from r in target.GetDataTable().AsEnumerable() select Mapper.Map(factory, target.GetDataRow(), mappings);
 }

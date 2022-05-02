@@ -7,6 +7,14 @@ namespace PiraSoft.Tools.Data;
 #pragma warning disable IDE0079 // Remove unnecessary suppression
 #pragma warning disable S2436 // Methods should not have too many parameters
 #pragma warning restore IDE0079 // Remove unnecessary suppression
+/// <summary>
+/// A  transactional database interation.
+/// </summary>
+/// <typeparam name="TConnection">The type of connection.</typeparam>
+/// <typeparam name="TDataReader">The type of data reader.</typeparam>
+/// <typeparam name="TDataAdapter">The type of data adapter</typeparam>
+/// <typeparam name="TCommand">The type of command</typeparam>
+/// <typeparam name="TParameter">The type of parameters.</typeparam>
 public sealed class TransactionConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>
     : ConnectionManagerImplementation<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>, IDisposable
         where TConnection : DbConnection
@@ -30,6 +38,9 @@ public sealed class TransactionConnectionManager<TConnection, TDataReader, TData
         _transaction = _connection.BeginTransaction(isolationLevel);
     }
 
+    /// <summary>
+    /// Commits the database transaction.
+    /// </summary>
     public void Commit()
     {
         this.CheckTransaction();
@@ -39,6 +50,9 @@ public sealed class TransactionConnectionManager<TConnection, TDataReader, TData
         this.Cleanup();
     }
 
+    /// <summary>
+    /// Rolls back a transaction from a pending state.
+    /// </summary>
     public void Rollback()
     {
         this.CheckTransaction();
@@ -48,7 +62,14 @@ public sealed class TransactionConnectionManager<TConnection, TDataReader, TData
         this.Cleanup();
     }
 
-    protected internal override TConnection GetConnection()
+    /// <summary>
+    /// Returns the connection used by transaction.
+    /// </summary>
+    /// <returns>The connection used by transaction.</returns>
+    /// <exception cref="ObjectDisposedException">
+    /// The transaction and the connection are closed and the object is disposed.
+    /// </exception>
+    protected internal sealed override TConnection GetConnection()
     {
         if (_disposedValue)
         {
@@ -58,6 +79,10 @@ public sealed class TransactionConnectionManager<TConnection, TDataReader, TData
         return _connection;
     }
 
+    /// <summary>
+    /// No action performed.
+    /// </summary>
+    /// <param name="connection">The connection to dispose.</param>
     protected override void DisposeConnection(TConnection connection)
     {
         //This class manage connection internally

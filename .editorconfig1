@@ -118,7 +118,7 @@ csharp_style_prefer_index_operator = true:silent
 csharp_style_prefer_local_over_anonymous_function = true:silent
 csharp_style_prefer_null_check_over_type_check = true:silent
 csharp_style_prefer_range_operator = true:silent
-csharp_style_prefer_tuple_swap = true:silent
+csharp_style_prefer_tuple_swap = true
 csharp_style_throw_expression = true:silent
 csharp_style_unused_value_assignment_preference = discard_variable:silent
 csharp_style_unused_value_expression_statement_preference = discard_variable
@@ -194,9 +194,29 @@ dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = warning
 dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
 dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 
+dotnet_naming_rule.constant_should_be_pascal_case.severity = warning
+dotnet_naming_rule.constant_should_be_pascal_case.symbols = constant
+dotnet_naming_rule.constant_should_be_pascal_case.style = pascal_case
+
 dotnet_naming_rule.class_should_be_pascal_case.severity = warning
 dotnet_naming_rule.class_should_be_pascal_case.symbols = class
 dotnet_naming_rule.class_should_be_pascal_case.style = pascal_case
+
+dotnet_naming_rule.static_field_should_be_camel_case.severity = warning
+dotnet_naming_rule.static_field_should_be_camel_case.symbols = static_field
+dotnet_naming_rule.static_field_should_be_camel_case.style = camel_case
+
+dotnet_naming_rule.private_or_internal_static_field_should_be_camel_case.severity = warning
+dotnet_naming_rule.private_or_internal_static_field_should_be_camel_case.symbols = private_or_internal_static_field
+dotnet_naming_rule.private_or_internal_static_field_should_be_camel_case.style = camel_case
+
+dotnet_naming_rule.public_or_protected_field_should_be_pascal_case.severity = warning
+dotnet_naming_rule.public_or_protected_field_should_be_pascal_case.symbols = public_or_protected_field
+dotnet_naming_rule.public_or_protected_field_should_be_pascal_case.style = pascal_case
+
+dotnet_naming_rule.private_or_internal_field_should_be_begins_with__.severity = warning
+dotnet_naming_rule.private_or_internal_field_should_be_begins_with__.symbols = private_or_internal_field
+dotnet_naming_rule.private_or_internal_field_should_be_begins_with__.style = begins_with__
 
 dotnet_naming_rule.struct_should_be_pascal_case.severity = warning
 dotnet_naming_rule.struct_should_be_pascal_case.symbols = struct
@@ -214,9 +234,17 @@ dotnet_naming_rule.event_should_be_pascal_case.severity = warning
 dotnet_naming_rule.event_should_be_pascal_case.symbols = event
 dotnet_naming_rule.event_should_be_pascal_case.style = pascal_case
 
+dotnet_naming_rule.asyncmethod_should_be_ends_with_async.severity = warning
+dotnet_naming_rule.asyncmethod_should_be_ends_with_async.symbols = asyncmethod
+dotnet_naming_rule.asyncmethod_should_be_ends_with_async.style = ends_with_async
+
 dotnet_naming_rule.method_should_be_pascal_case.severity = warning
 dotnet_naming_rule.method_should_be_pascal_case.symbols = method
 dotnet_naming_rule.method_should_be_pascal_case.style = pascal_case
+
+dotnet_naming_rule.static_readonly_should_be_pascal_case.severity = warning
+dotnet_naming_rule.static_readonly_should_be_pascal_case.symbols = static_readonly
+dotnet_naming_rule.static_readonly_should_be_pascal_case.style = pascal_case
 
 dotnet_naming_rule.private_method_should_be_pascal_case.severity = warning
 dotnet_naming_rule.private_method_should_be_pascal_case.symbols = private_method
@@ -234,29 +262,9 @@ dotnet_naming_rule.property_should_be_pascal_case.severity = warning
 dotnet_naming_rule.property_should_be_pascal_case.symbols = property
 dotnet_naming_rule.property_should_be_pascal_case.style = pascal_case
 
-dotnet_naming_rule.public_or_protected_field_should_be_camel_case.severity = warning
-dotnet_naming_rule.public_or_protected_field_should_be_camel_case.symbols = public_or_protected_field
-dotnet_naming_rule.public_or_protected_field_should_be_camel_case.style = camel_case
-
-dotnet_naming_rule.static_field_should_be_camel_case.severity = warning
-dotnet_naming_rule.static_field_should_be_camel_case.symbols = static_field
-dotnet_naming_rule.static_field_should_be_camel_case.style = camel_case
-
-dotnet_naming_rule.private_or_internal_field_should_be_begins_with__.severity = warning
-dotnet_naming_rule.private_or_internal_field_should_be_begins_with__.symbols = private_or_internal_field
-dotnet_naming_rule.private_or_internal_field_should_be_begins_with__.style = begins_with__
-
-dotnet_naming_rule.private_or_internal_static_field_should_be_camel_case.severity = warning
-dotnet_naming_rule.private_or_internal_static_field_should_be_camel_case.symbols = private_or_internal_static_field
-dotnet_naming_rule.private_or_internal_static_field_should_be_camel_case.style = camel_case
-
 dotnet_naming_rule.types_should_be_camel_case.severity = warning
 dotnet_naming_rule.types_should_be_camel_case.symbols = types
 dotnet_naming_rule.types_should_be_camel_case.style = camel_case
-
-dotnet_naming_rule.asyncmethod_should_be_ends_with_async.severity = warning
-dotnet_naming_rule.asyncmethod_should_be_ends_with_async.symbols = asyncmethod
-dotnet_naming_rule.asyncmethod_should_be_ends_with_async.style = ends_with_async
 
 # Symbol specifications
 
@@ -331,6 +339,14 @@ dotnet_naming_symbols.non_field_members.required_modifiers =
 dotnet_naming_symbols.asyncmethod.applicable_kinds = method
 dotnet_naming_symbols.asyncmethod.applicable_accessibilities = *
 dotnet_naming_symbols.asyncmethod.required_modifiers = async
+
+dotnet_naming_symbols.constant.applicable_kinds = field
+dotnet_naming_symbols.constant.applicable_accessibilities = *
+dotnet_naming_symbols.constant.required_modifiers = const
+
+dotnet_naming_symbols.static_readonly.applicable_kinds = field
+dotnet_naming_symbols.static_readonly.applicable_accessibilities = *
+dotnet_naming_symbols.static_readonly.required_modifiers = readonly, static
 
 # Naming styles
 

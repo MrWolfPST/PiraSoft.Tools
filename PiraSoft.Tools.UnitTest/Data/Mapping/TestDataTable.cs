@@ -14,5 +14,11 @@ internal class TestDataTable : DataTable
         row["AnotherStringColumn"] = "AnotherStringValue";
 
         this.Rows.Add(row);
+
+        row = this.NewRow();
+        row["StringProperty"] = "StringValue";
+        row["AnotherStringColumn"] = "AnotherStringValue";
+
+        this.Rows.Add(row);
     }
 }

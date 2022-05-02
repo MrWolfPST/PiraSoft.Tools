@@ -1,7 +1,15 @@
 ﻿namespace System.Data.Common;
 
+/// <summary>
+/// A set of <see cref="DbParameterExtensions"/> extension methods.
+/// </summary>
 public static class DbParameterExtensions
 {
+    /// <summary>
+    /// Returns the string representation of <see cref="DbParameter"/> object.
+    /// </summary>
+    /// <param name="target">The <see cref="DbParameter"/> object.</param>
+    /// <returns>The string representation of <see cref="DbParameter"/> object.</returns>
     public static string? Dump(this DbParameter target)
     {
         if (target.Direction == ParameterDirection.Output)

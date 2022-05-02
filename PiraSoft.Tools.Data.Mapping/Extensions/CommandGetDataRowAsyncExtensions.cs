@@ -1,6 +1,7 @@
-﻿using System.Data.Common;
+﻿using PiraSoft.Tools.Data.Mapping;
+using System.Data.Common;
 
-namespace PiraSoft.Tools.Data.Mapping;
+namespace PiraSoft.Tools.Data;
 
 public static class CommandGetDataRowAsyncExtensions
 {
@@ -14,25 +15,25 @@ public static class CommandGetDataRowAsyncExtensions
         where TParameter : DbParameter
         => Mapper.Map(factory, await target.GetDataRowAsync(cancellationToken), mappings);
 
-    public static Task<T> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, CancellationToken cancellationToken = default)
+    public static Task<T?> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, CancellationToken cancellationToken = default)
         where T : new()
         where TDataReader : DbDataReader
         where TParameter : DbParameter
         => target.GetAsync(() => new T(), null, cancellationToken);
 
-    public static Task<T> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, TypeMappings? mappings, CancellationToken cancellationToken = default)
+    public static Task<T?> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, TypeMappings? mappings, CancellationToken cancellationToken = default)
         where T : new()
         where TDataReader : DbDataReader
         where TParameter : DbParameter
         => target.GetAsync(() => new T(), mappings, cancellationToken);
 
-    public static Task<T> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, CancellationToken cancellationToken = default)
+    public static Task<T?> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, CancellationToken cancellationToken = default)
         where TDataReader : DbDataReader
         where TParameter : DbParameter
         => target.GetAsync(factory, null, cancellationToken);
 
-    public static async Task<T> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, TypeMappings? mappings, CancellationToken cancellationToken = default)
+    public static async Task<T?> GetAsync<T, TDataReader, TParameter>(this Command<TDataReader, TParameter> target, Func<T> factory, TypeMappings? mappings, CancellationToken cancellationToken = default)
         where TDataReader : DbDataReader
         where TParameter : DbParameter
-        => (T)Mapper.Map(factory, await target.GetDataRowAsync(cancellationToken), mappings);
+        => Mapper.Map(factory, await target.GetDataRowAsync(cancellationToken), mappings);
 }

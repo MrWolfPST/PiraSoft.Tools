@@ -28,15 +28,44 @@ public static class Mapper
         => Map(factory, row, null);
 
     public static object? Map(Func<object> factory, DataRow? row, TypeMappings? mappings)
+        => Map<object>(factory, row, mappings);
+
+    public static void Map(object target, DataRow? row)
+        => Map(target, row, null);
+
+    public static void Map(object target, DataRow? row, TypeMappings? mappings)
     {
-        if (row == null)
+        ArgumentNullException.ThrowIfNull(target);
+        ArgumentNullException.ThrowIfNull(row);
+         
+        mappings ??= EnsureTypeMappings(target.GetType());
+
+        if (target.GetType() != mappings.Type)
         {
-            return null;
+            throw new ArgumentException($"Type of {nameof(target)} is not the same of type specified in {nameof(mappings)}.");
         }
 
-        if (factory == null)
+        mappings.Mappings.ForEach(i => i.Map(target, row));
+    }
+
+    public static T? Map<T>(DataRow? row)
+        where T : new()
+        => Map<T>(() => new T(), row, null);
+
+    public static T? Map<T>(DataRow? row, TypeMappings? mappings)
+        where T : new()
+        => Map<T>(() => new T(), row, mappings);
+
+    public static T? Map<T>(Func<T> factory, DataRow? row)
+        => Map<T>(factory, row, null);
+
+    public static T? Map<T>(Func<T> factory, DataRow? row, TypeMappings? mappings)
+    {
+        ArgumentNullException.ThrowIfNull(factory);
+
+        if (row == null)
         {
-            throw new ArgumentNullException(nameof(factory));
+            return default;
         }
 
         var retVal = factory();
@@ -50,46 +79,4 @@ public static class Mapper
 
         return retVal;
     }
-
-    public static void Map(object target, DataRow? row)
-        => Map(target, row, null);
-
-    public static void Map(object target, DataRow? row, TypeMappings? mappings)
-    {
-        if (row == null)
-        {
-            throw new ArgumentNullException(nameof(row));
-        }
-            
-        if (target == null)
-        {
-            throw new ArgumentNullException(nameof(target));
-        }
-
-        mappings ??= EnsureTypeMappings(target.GetType());
-
-        if (target.GetType() != mappings.Type)
-        {
-            throw new ArgumentException($"Type of {nameof(target)} is not the same of type specified in {nameof(mappings)}.");
-        }
-
-        if (row == null)
-        {
-            throw new ArgumentNullException(nameof(row));
-        }
-
-        mappings.Mappings.ForEach(i => i.Map(target, row));
-    }
-
-    public static T Map<T>(DataRow? row) where T : new()
-        => Map<T>(() => new T(), row, null);
-
-    public static T Map<T>(DataRow? row, TypeMappings? mappings) where T : new()
-        => Map<T>(() => new T(), row, mappings);
-
-    public static T Map<T>(Func<T> factory, DataRow? row)
-        => Map<T>(factory, row, null);
-
-    public static T Map<T>(Func<T> factory, DataRow? row, TypeMappings? mappings)
-        => (T)Map(factory, row, mappings);
 }

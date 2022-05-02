@@ -1,12 +1,13 @@
-﻿using System.Data;
+﻿using PiraSoft.Tools.Data.Mapping;
+using System.Data;
 
-namespace PiraSoft.Tools.Data.Mapping.Extensions;
+namespace System;
 
 public static class ObjectExtensions
 {
     public static void Map(this object target, DataRow row)
-        => row.Map(target, null);
+        => target.Map(row, null);
 
     public static void Map(this object target, DataRow row, TypeMappings? mappings)
-        => Mapper.Map(target, row, mappings);
+        => row.Map(target ?? throw new ArgumentNullException(nameof(target)), mappings);
 }

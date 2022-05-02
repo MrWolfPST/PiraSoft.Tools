@@ -64,5 +64,48 @@ namespace System
 
             return (T?)field.GetValue(target);
         }
+
+        /// <summary>
+        /// Executes an action on target object and returns it.
+        /// </summary>
+        /// <typeparam name="T">The type of target object.</typeparam>
+        /// <param name="target">The target object.</param>
+        /// <param name="action">The action to perfonrm on target object.</param>
+        /// <returns>The object target of action.</returns>
+        public static T ExecuteAndReturn<T>(this T target, Action<T> action)
+        {
+            action(target);
+
+            return target;
+        }
+
+        /// <summary>
+        /// Executes an action on target object and returns it.
+        /// </summary>
+        /// <typeparam name="T">The type of target object.</typeparam>
+        /// <param name="target">The target object.</param>
+        /// <param name="action">The action to perfonrm on target object.</param>
+        /// <returns>The object target of action.</returns>
+        public static async Task<T> ExecuteAndReturnAsync<T>(this T target, Func<T, Task<T>> action)
+        {
+            await action(target);
+
+            return target;
+        }
+
+        /// <summary>
+        /// Executes an action on target object and returns it.
+        /// </summary>
+        /// <typeparam name="T">The type of target object.</typeparam>
+        /// <param name="target">The target object.</param>
+        /// <param name="action">The action to perfonrm on target object.</param>
+        /// <param name="cancellation">The cancellation instruction.</param>
+        /// <returns>The object target of action.</returns>
+        public static async Task<T> ExecuteAndReturnAsync<T>(this T target, Func<T, CancellationToken, Task<T>> action, CancellationToken cancellation)
+        {
+            await action(target, cancellation);
+
+            return target;
+        }
     }
 }

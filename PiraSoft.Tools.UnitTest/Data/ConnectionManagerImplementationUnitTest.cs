@@ -85,16 +85,16 @@ public class ConnectionManagerImplementationUnitTest
             => throw new NotImplementedException();
     }
 
-    public class WrapperDbDataAdapter : DbDataAdapter
-    {
-        public bool FillReceived { get; private set; }
+    //public class WrapperDbDataAdapter : DbDataAdapter
+    //{
+    //    public bool FillReceived { get; private set; }
 
-        protected override int Fill(DataTable[] dataTables, int startRecord, int maxRecords, IDbCommand command, CommandBehavior behavior)
-        {
-            this.FillReceived = true;
-            return base.Fill(dataTables, startRecord, maxRecords, command, behavior);
-        }
-    }
+    //    protected override int Fill(DataTable[] dataTables, int startRecord, int maxRecords, IDbCommand command, CommandBehavior behavior)
+    //    {
+    //        this.FillReceived = true;
+    //        return base.Fill(dataTables, startRecord, maxRecords, command, behavior);
+    //    }
+    //}
 
     [TestMethod]
     public void Ctor()
@@ -204,7 +204,7 @@ public class ConnectionManagerImplementationUnitTest
         var factoryMock = Substitute.For<DbProviderFactory>();
         var connectionManager = new FakeConnectionManager(loggerMock, factoryMock);
         var commandMock = Substitute.For<DbCommand>();
-        var dataAdapterMock = new WrapperDbDataAdapter();
+        var dataAdapterMock = Substitute.For<DbDataAdapter>();
 
         factoryMock.CreateCommand().Returns(commandMock);
         factoryMock.CreateDataAdapter().Returns(dataAdapterMock);
@@ -221,7 +221,7 @@ public class ConnectionManagerImplementationUnitTest
         Assert.AreEqual(CommandType.StoredProcedure, commandMock.CommandType);
         Assert.AreEqual(30, commandMock.CommandTimeout);
         Assert.AreEqual(1, commandMock.Parameters.Count);
-        Assert.IsTrue(dataAdapterMock.FillReceived);
+        dataAdapterMock.Received().Fill(Arg.Any<DataSet>());
     }
 
     [TestMethod]
@@ -231,7 +231,7 @@ public class ConnectionManagerImplementationUnitTest
         var factoryMock = Substitute.For<DbProviderFactory>();
         var connectionManager = new FakeConnectionManager(loggerMock, factoryMock);
         var commandMock = Substitute.For<DbCommand>();
-        var dataAdapterMock = new WrapperDbDataAdapter();
+        var dataAdapterMock = Substitute.For<DbDataAdapter>();
 
         factoryMock.CreateCommand().Returns(commandMock);
         factoryMock.CreateDataAdapter().Returns(dataAdapterMock);
@@ -248,7 +248,7 @@ public class ConnectionManagerImplementationUnitTest
         Assert.AreEqual(CommandType.StoredProcedure, commandMock.CommandType);
         Assert.AreEqual(30, commandMock.CommandTimeout);
         Assert.AreEqual(1, commandMock.Parameters.Count);
-        Assert.IsTrue(dataAdapterMock.FillReceived);
+        dataAdapterMock.Received().Fill(Arg.Any<DataSet>());
     }
 
     [TestMethod]
@@ -421,7 +421,7 @@ public class ConnectionManagerImplementationUnitTest
     }
 
     [TestMethod]
-    public async Task ExecuteReaderAsyncBehaviour()
+    public async Task ExecuteReaderBehaviourAsync()
     {
         var loggerMock = Substitute.For<ILogger>();
         var factoryMock = Substitute.For<DbProviderFactory>();
@@ -453,7 +453,7 @@ public class ConnectionManagerImplementationUnitTest
     }
 
     [TestMethod]
-    public async Task ExecuteReaderAsyncCommandTimeout()
+    public async Task ExecuteReaderCommandTimeoutAsync()
     {
         var loggerMock = Substitute.For<ILogger>();
         var factoryMock = Substitute.For<DbProviderFactory>();
@@ -486,7 +486,7 @@ public class ConnectionManagerImplementationUnitTest
     }
 
     [TestMethod]
-    public async Task ExecuteAsyncException()
+    public async Task ExecuteExceptionAsync()
     {
         var loggerMock = Substitute.For<ILogger>();
         var factoryMock = Substitute.For<DbProviderFactory>();

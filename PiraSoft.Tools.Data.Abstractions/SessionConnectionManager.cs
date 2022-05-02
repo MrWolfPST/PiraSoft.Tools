@@ -6,6 +6,14 @@ namespace PiraSoft.Tools.Data;
 #pragma warning disable IDE0079 // Remove unnecessary suppression
 #pragma warning disable S2436 // Methods should not have too many parameters
 #pragma warning restore IDE0079 // Remove unnecessary suppression
+/// <summary>
+/// A database interaction on the same connection.
+/// </summary>
+/// <typeparam name="TConnection">The type of connection.</typeparam>
+/// <typeparam name="TDataReader">The type of data reader.</typeparam>
+/// <typeparam name="TDataAdapter">The type of data adapter</typeparam>
+/// <typeparam name="TCommand">The type of command</typeparam>
+/// <typeparam name="TParameter">The type of parameters.</typeparam>
 public sealed class SessionConnectionManager<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>
     : ConnectionManagerImplementation<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>, IDisposable
         where TConnection : DbConnection
@@ -27,7 +35,14 @@ public sealed class SessionConnectionManager<TConnection, TDataReader, TDataAdap
         _connection.Open();
     }
 
-    protected internal override TConnection GetConnection()
+    /// <summary>
+    /// Returns the connection.
+    /// </summary>
+    /// <returns>The connection.</returns>
+    /// <exception cref="ObjectDisposedException">
+    /// The connection is closed and the object is disposed.
+    /// </exception>
+    protected internal sealed override TConnection GetConnection()
     {
         if (_disposedValue)
         {
@@ -37,11 +52,18 @@ public sealed class SessionConnectionManager<TConnection, TDataReader, TDataAdap
         return _connection;
     }
 
-    protected override void DisposeConnection(TConnection connection)
+    /// <summary>
+    /// No action performed.
+    /// </summary>
+    /// <param name="connection">The connection to dispose.</param>
+    protected override sealed void DisposeConnection(TConnection connection)
     {
         //This class manage connection internally
     }
 
+    /// <summary>
+    /// Close the connection.
+    /// </summary>
     public void Close()
     {
         _connection.Close();
