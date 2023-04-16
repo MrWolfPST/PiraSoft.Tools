@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PiraSoft.Tools.Core.Extensions;
 using System;
 
 namespace PiraSoft.Tools.UnitTest.Core.Extensions;

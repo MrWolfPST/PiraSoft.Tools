@@ -28,7 +28,7 @@ public class IConnectionManagerGetAsyncExtensionsUnitTest
             Arg.Any<CommandType>(),
             Arg.Any<int?>(),
             Arg.Any<IEnumerable<SqlParameter>?>())
-            .Returns(Task.FromResult((DataRow?)dt.Rows[0]));
+            .Returns(Task.FromResult<DataRow?>(dt.Rows[0]));
     }
 
     [TestMethod]

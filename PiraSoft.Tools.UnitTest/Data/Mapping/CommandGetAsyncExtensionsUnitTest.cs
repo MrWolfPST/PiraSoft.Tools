@@ -29,7 +29,7 @@ public class CommandGetAsyncExtensionsUnitTest
             Arg.Is(CommandType.StoredProcedure),
             Arg.Is<int?>(v => v == null),
             Arg.Is<IEnumerable<SqlParameter>>(v => !v.Any()))
-            .Returns(Task.FromResult((DataRow?)dt.Rows[0]));
+            .Returns(Task.FromResult<DataRow?>(dt.Rows[0]));
     }
 
     [TestMethod]

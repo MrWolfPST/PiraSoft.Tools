@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace PiraSoft.Tools.UnitTest.Core.Extensions;
 
@@ -28,16 +30,39 @@ public class ObjectExtensionsUnitTest
         var target = new PrivateFieldClass();
 
         Assert.AreEqual("private", target.GetNotPublicFieldValue<string>("_privateField"));
-        Assert.AreEqual("protected", target.GetNotPublicFieldValue<string>("protectedField"));
+        Assert.AreEqual("protected", target.GetNotPublicFieldValue<string>("ProtectedField"));
         Assert.AreEqual("internal", target.GetNotPublicFieldValue<string>("_internalField"));
+    }
+
+    [TestMethod]
+    public async Task ExecuteAndReturnAsync()
+    {
+        var check = 0;
+        var target = new { Val = 1 };
+        var result = await target.ExecuteAndReturnAsync(o => Task.Run(() => check = o.Val));
+
+        Assert.AreEqual(1, check);
+        Assert.IsInstanceOfType(result, target.GetType());
+    }
+
+    [TestMethod]
+    public async Task CancellableExecuteAndReturnAsync()
+    {
+        var check = 0;
+        var target = new { Val = 1 };
+        var result = await target.ExecuteAndReturnAsync((o, c) => Task.Run(() => check = o.Val), CancellationToken.None);
+
+        Assert.AreEqual(1, check);
+        Assert.IsInstanceOfType(result, target.GetType());
     }
 }
 
 internal class PrivateFieldClass
 {
     private string _privateField = "private";
-    protected string protectedField = "protected";
+    protected string ProtectedField = "protected";
     internal string _internalField = "internal";
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S2292:Trivial properties should be auto-implemented")]
     public string PrivateField { get => _privateField; set => _privateField = value; }
 }

@@ -4,16 +4,13 @@ using System.Data.Common;
 
 namespace PiraSoft.Tools.Data;
 
-#pragma warning disable IDE0079 // Remove unnecessary suppression
-#pragma warning disable S2436 // Methods should not have too many parameters
-#pragma warning restore IDE0079 // Remove unnecessary suppression
 /// <summary>
 /// The abstract base class for provider specific database interaction. Every interaction open a new connection.
 /// </summary>
 /// <typeparam name="TConnection">The type of connection.</typeparam>
 /// <typeparam name="TDataReader">The type of data reader.</typeparam>
-/// <typeparam name="TDataAdapter">The type of data adapter</typeparam>
-/// <typeparam name="TCommand">The type of command</typeparam>
+/// <typeparam name="TDataAdapter">The type of data adapter.</typeparam>
+/// <typeparam name="TCommand">The type of command.</typeparam>
 /// <typeparam name="TParameter">The type of parameters.</typeparam>
 public abstract class ConnectionManagerBase<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>
     : ConnectionManagerImplementation<TConnection, TDataReader, TDataAdapter, TCommand, TParameter>
@@ -22,9 +19,6 @@ public abstract class ConnectionManagerBase<TConnection, TDataReader, TDataAdapt
         where TDataAdapter : DbDataAdapter
         where TCommand : DbCommand
         where TParameter : DbParameter
-#pragma warning disable IDE0079 // Remove unnecessary suppression
-#pragma warning restore S2436 // Methods should not have too many parameters
-#pragma warning restore IDE0079 // Remove unnecessary suppression
 {
     private readonly string _connectionString;
 

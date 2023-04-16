@@ -18,6 +18,9 @@ public static class DataTableExtensions
     {
         var schema = await reader.GetColumnSchemaAsync(cancellationToken);
 
+        if (schema == null)
+            return;
+
         schema.ForEach(i => target.Columns.Add(new DataColumn()
         {
             AllowDBNull = i.AllowDBNull.GetValueOrDefault(),

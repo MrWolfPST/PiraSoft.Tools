@@ -3,9 +3,6 @@ using System.Data.Common;
 
 namespace PiraSoft.Tools.Data;
 
-#pragma warning disable IDE0079 // Remove unnecessary suppression
-#pragma warning disable S2436 // Methods should not have too many parameters
-#pragma warning restore IDE0079 // Remove unnecessary suppression
 /// <summary>
 /// A database interaction on the same connection.
 /// </summary>
@@ -21,9 +18,6 @@ public sealed class SessionConnectionManager<TConnection, TDataReader, TDataAdap
         where TDataAdapter : DbDataAdapter
         where TCommand : DbCommand
         where TParameter : DbParameter
-#pragma warning disable IDE0079 // Remove unnecessary suppression
-#pragma warning restore S2436 // Methods should not have too many parameters
-#pragma warning restore IDE0079 // Remove unnecessary suppression
 {
     private readonly TConnection _connection;
     private bool _disposedValue;

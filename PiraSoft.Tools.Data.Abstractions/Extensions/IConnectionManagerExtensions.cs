@@ -93,7 +93,7 @@ public static class IConnectionManagerExtensions
     /// <param name="commandText">The SQL statement.</param>
     /// <param name="commandType">The value indicating how the <paramref name="commandText"/> is to be interpreted. Default value is <see cref="CommandType.StoredProcedure"/></param>
     /// <param name="commandTimeout">The wait time before terminating the attempt to execute a command and generating an error.</param>
-    /// <param name="cancellationToken"></param>
+    /// <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
     /// <param name="parameters">The list of parametes used by the SQL statement.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
     public static Task<int> ExecuteNonQueryAsync<TDataReader, TParameter>(this IConnectionManager<TDataReader, TParameter> target, string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, CancellationToken cancellationToken = default, params TParameter[] parameters)
@@ -162,7 +162,7 @@ public static class IConnectionManagerExtensions
     /// <param name="commandText">The SQL statement.</param>
     /// <param name="commandType">The value indicating how the <paramref name="commandText"/> is to be interpreted. Default value is <see cref="CommandType.StoredProcedure"/></param>
     /// <param name="commandTimeout">The wait time before terminating the attempt to execute a command and generating an error.</param>
-    /// <param name="cancellationToken"></param>
+    /// <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
     /// <param name="parameters">The list of parametes used by the SQL statement.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
     public static Task<T?> ExecuteScalarAsync<T, TDataReader, TParameter>(this IConnectionManager<TDataReader, TParameter> target, string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, CancellationToken cancellationToken = default, params TParameter[] parameters)
@@ -229,7 +229,7 @@ public static class IConnectionManagerExtensions
     /// <param name="commandType">The value indicating how the <paramref name="commandText"/> is to be interpreted. Default value is <see cref="CommandType.StoredProcedure"/></param>
     /// <param name="commandTimeout">The wait time before terminating the attempt to execute a command and generating an error.</param>
     /// <param name="behavior"></param>
-    /// <param name="cancellationToken"></param>
+    /// <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
     /// <param name="parameters">The list of parametes used by the SQL statement.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
     public static Task<TDataReader> ExecuteReaderAsync<TDataReader, TParameter>(this IConnectionManager<TDataReader, TParameter> target, string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, CommandBehavior behavior = CommandBehavior.Default, CancellationToken cancellationToken = default, params TParameter[] parameters)
@@ -294,7 +294,7 @@ public static class IConnectionManagerExtensions
     /// <param name="commandText">The SQL statement.</param>
     /// <param name="commandType">The value indicating how the <paramref name="commandText"/> is to be interpreted. Default value is <see cref="CommandType.StoredProcedure"/></param>
     /// <param name="commandTimeout">The wait time before terminating the attempt to execute a command and generating an error.</param>
-    /// <param name="cancellationToken"></param>
+    /// <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
     /// <param name="parameters">The list of parametes used by the SQL statement.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
     public static Task<DataSet> GetDataSetAsync<TDataReader, TParameter>(this IConnectionManager<TDataReader, TParameter> target, string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, CancellationToken cancellationToken = default, params TParameter[] parameters)
@@ -359,7 +359,7 @@ public static class IConnectionManagerExtensions
     /// <param name="commandText">The SQL statement.</param>
     /// <param name="commandType">The value indicating how the <paramref name="commandText"/> is to be interpreted. Default value is <see cref="CommandType.StoredProcedure"/></param>
     /// <param name="commandTimeout">The wait time before terminating the attempt to execute a command and generating an error.</param>
-    /// <param name="cancellationToken"></param>
+    /// <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
     /// <param name="parameters">The list of parametes used by the SQL statement.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
     public static Task<DataTable> GetDataTableAsync<TDataReader, TParameter>(this IConnectionManager<TDataReader, TParameter> target, string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, CancellationToken cancellationToken = default, params TParameter[] parameters)
@@ -424,7 +424,7 @@ public static class IConnectionManagerExtensions
     /// <param name="commandText">The SQL statement.</param>
     /// <param name="commandType">The value indicating how the <paramref name="commandText"/> is to be interpreted. Default value is <see cref="CommandType.StoredProcedure"/></param>
     /// <param name="commandTimeout">The wait time before terminating the attempt to execute a command and generating an error.</param>
-    /// <param name="cancellationToken"></param>
+    /// <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
     /// <param name="parameters">The list of parametes used by the SQL statement.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
     public static Task<DataRow?> GetDataRowAsync<TDataReader, TParameter>(this IConnectionManager<TDataReader, TParameter> target, string commandText, CommandType commandType = CommandType.StoredProcedure, int? commandTimeout = default, CancellationToken cancellationToken = default, params TParameter[] parameters)

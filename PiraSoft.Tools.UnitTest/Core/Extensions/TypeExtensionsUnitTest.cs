@@ -8,10 +8,14 @@ namespace PiraSoft.Tools.UnitTest.Core.Extensions;
 public class TypeExtensionsUnitTest
 {
     internal class BaseClass
-    { }
+    {
+        public string? Dummy { get; set; }
+    }
 
     internal class DerivedClass : BaseClass
-    { }
+    {
+        public string? Dummy2 { get; set; }
+    }
 
     [TestMethod]
     public void IsEnumerable()

@@ -4,9 +4,6 @@ using System.Data.Common;
 
 namespace PiraSoft.Tools.Data;
 
-#pragma warning disable IDE0079 // Remove unnecessary suppression
-#pragma warning disable S2436 // Methods should not have too many parameters
-#pragma warning restore IDE0079 // Remove unnecessary suppression
 /// <summary>
 /// The base implementation of data base interaction class.
 /// </summary>
@@ -22,9 +19,6 @@ public abstract class ConnectionManagerImplementation<TConnection, TDataReader, 
         where TDataAdapter : DbDataAdapter
         where TCommand : DbCommand
         where TParameter : DbParameter
-#pragma warning disable IDE0079 // Remove unnecessary suppression
-#pragma warning restore S2436 // Methods should not have too many parameters
-#pragma warning restore IDE0079 // Remove unnecessary suppression
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ConnectionManagerImplementation{TConnection, TDataReader, TDataAdapter, TCommand, TParameter}"/> class.

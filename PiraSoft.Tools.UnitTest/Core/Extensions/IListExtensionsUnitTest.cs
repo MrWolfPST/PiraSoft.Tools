@@ -65,4 +65,15 @@ public class IListExtensionsUnitTest
 
         Assert.IsInstanceOfType(result, typeof(int[]));
     }
+
+    [TestMethod]
+    public void AddAndReturn()
+    {
+        var target = new List<string>();
+        var item = target.AddAndReturn("test");
+
+        Assert.AreEqual(1, target.Count);
+        Assert.AreEqual("test", item);
+        Assert.AreEqual(item, target.FirstOrDefault());
+    }
 }

@@ -86,7 +86,7 @@ namespace System
         /// <param name="target">The target object.</param>
         /// <param name="action">The action to perfonrm on target object.</param>
         /// <returns>The object target of action.</returns>
-        public static async Task<T> ExecuteAndReturnAsync<T>(this T target, Func<T, Task<T>> action)
+        public static async Task<T> ExecuteAndReturnAsync<T>(this T target, Func<T, Task> action)
         {
             await action(target);
 
@@ -101,7 +101,7 @@ namespace System
         /// <param name="action">The action to perfonrm on target object.</param>
         /// <param name="cancellation">The cancellation instruction.</param>
         /// <returns>The object target of action.</returns>
-        public static async Task<T> ExecuteAndReturnAsync<T>(this T target, Func<T, CancellationToken, Task<T>> action, CancellationToken cancellation)
+        public static async Task<T> ExecuteAndReturnAsync<T>(this T target, Func<T, CancellationToken, Task> action, CancellationToken cancellation)
         {
             await action(target, cancellation);
 

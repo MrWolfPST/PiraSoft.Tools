@@ -14,8 +14,6 @@ public class RelationMappingUnitTest
         Assert.ThrowsException<ArgumentException>(() => new RelationMapping(""), "empty");
         Assert.ThrowsException<ArgumentException>(() => new RelationMapping(" "), "white space");
 
-        var ds = new TestDataSet();
-        var dt = ds.Parents;
         var target = new Parent();
         var mapping = new RelationMapping("Relation", TypeMappings.Generate<Category>());
 

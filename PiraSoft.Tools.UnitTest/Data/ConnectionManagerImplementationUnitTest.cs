@@ -85,17 +85,6 @@ public class ConnectionManagerImplementationUnitTest
             => throw new NotImplementedException();
     }
 
-    //public class WrapperDbDataAdapter : DbDataAdapter
-    //{
-    //    public bool FillReceived { get; private set; }
-
-    //    protected override int Fill(DataTable[] dataTables, int startRecord, int maxRecords, IDbCommand command, CommandBehavior behavior)
-    //    {
-    //        this.FillReceived = true;
-    //        return base.Fill(dataTables, startRecord, maxRecords, command, behavior);
-    //    }
-    //}
-
     [TestMethod]
     public void Ctor()
     {
