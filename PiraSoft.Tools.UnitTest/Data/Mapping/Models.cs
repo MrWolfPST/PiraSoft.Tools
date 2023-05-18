@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PiraSoft.Tools.UnitTest.Data.Mapping;
 
@@ -65,4 +66,43 @@ internal enum CategoryValue
     Code0 = 0,
     Code1 = 1,
     Code2 = 2
+}
+
+internal class ValueTypes
+{
+    public bool Boolean { get; set; }
+
+    public byte Byte { get; set; }
+
+    public Char Char { get; set; }
+
+    public DateTime DateTime { get; set; }
+
+    public DateTimeOffset DateTimeOffset { get; set; }
+
+    public decimal Decimal { get; set; }
+
+    public double Double { get; set; }
+
+    public Guid Guid { get; set; }
+
+    public short Short { get; set; }
+
+    public int Int { get; set; }
+
+    public long Long { get; set; }
+
+    public sbyte SignedByte { get; set; }
+
+    public float Float { get; set; }
+
+    public string? String { get; set; }
+
+    public TimeSpan TimeSpan { get; set; }
+
+    public ushort UnsignedShort { get; set; }
+
+    public uint UnsignedInt { get; set; }
+
+    public ulong UnsignedLong { get; set; }
 }

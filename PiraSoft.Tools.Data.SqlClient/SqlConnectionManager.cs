@@ -14,7 +14,7 @@ public class SqlConnectionManager
     /// </summary>
     /// <param name="connectionString">The connection used to connect the database.</param>
     /// <param name="logger">An instance of <see cref="ILogger"/>.</param>
-    public SqlConnectionManager(string connectionString, ILogger<SqlConnectionManager> logger)
+    public SqlConnectionManager(string connectionString, ILogger logger)
         : base(connectionString, logger, SqlClientFactory.Instance)
     { }
 }

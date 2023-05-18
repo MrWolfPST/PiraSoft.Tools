@@ -21,7 +21,6 @@ public class TransactionConnectionManagerUnitTest
         {
             var retVal = Substitute.For<DbProviderFactory>();
             var commandMock = Substitute.For<DbCommand>();
-            var connectionMock = Substitute.For<DbConnection>();
 
 #pragma warning disable NS1000 // Non-virtual setup specification.
             commandMock.Parameters.Returns(Substitute.For<DbParameterCollection>());

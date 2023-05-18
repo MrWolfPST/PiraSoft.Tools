@@ -1,12 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CodeAnalysisRuleSet>..\.sonarlint\pirasoft.toolscsharp.ruleset</CodeAnalysisRuleSet>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>PiraSoft.Tools.Data</Title>
+    <Copyright>PiraSoft.NET</Copyright>
+    <PackageProjectUrl>https://github.com/MrWolfPST/PiraSoft.Tools</PackageProjectUrl>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/MrWolfPST/PiraSoft.Tools</RepositoryUrl>
+    <PackageLicenseExpression>EUPL-1.2</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,11 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+    <None Include="..\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PiraSoft.Tools.Core\PiraSoft.Tools.Core.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+    <PackageReference Include="PiraSoft.Tools.Core" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

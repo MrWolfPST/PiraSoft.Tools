@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
@@ -26,8 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PiraSoft.Tools.Core\PiraSoft.Tools.Core.csproj" />
-    <ProjectReference Include="..\PiraSoft.Tools.Data.Abstractions\PiraSoft.Tools.Data.csproj" />
     <ProjectReference Include="..\PiraSoft.Tools.Data.Mapping\PiraSoft.Tools.Data.Mapping.csproj" />
     <ProjectReference Include="..\PiraSoft.Tools.Data.SqlClient\PiraSoft.Tools.Data.SqlClient.csproj" />
   </ItemGroup>

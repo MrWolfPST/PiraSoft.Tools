@@ -179,5 +179,11 @@ public class TypeMappings
     }
 
     private static bool IsImplicitMappingSupprotedType(Type type)
-        => (int)Type.GetTypeCode(Nullable.GetUnderlyingType(type) ?? type) > 2;
+        => (int)Type.GetTypeCode(Nullable.GetUnderlyingType(type) ?? type) > 2
+        || type == typeof(DateTime)
+        || type == typeof(Guid)
+        || type == typeof(TimeSpan)
+        || type == typeof(TimeOnly)
+        || type == typeof(DateOnly)
+        || type == typeof(DateTimeOffset);
 }

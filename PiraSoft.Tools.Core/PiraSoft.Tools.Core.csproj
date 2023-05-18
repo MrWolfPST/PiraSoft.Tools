@@ -1,17 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>False</SignAssembly>
     <CodeAnalysisRuleSet>..\.sonarlint\pirasoft.toolscsharp.ruleset</CodeAnalysisRuleSet>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>PiraSoft.Tools.Core</Title>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/MrWolfPST/PiraSoft.Tools</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MrWolfPST/PiraSoft.Tools</PackageProjectUrl>
+    <Copyright>PiraSoft.NET</Copyright>
+    <PackageLicenseExpression>EUPL-1.2</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="..\.sonarlint\pirasoft.tools\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -103,4 +103,53 @@ public class MapperUnitTest
 
         Assert.IsTrue(Mapper.TypeMappingsCatalog.ContainsKey(typeof(Parent)));
     }
+
+    [TestMethod]
+    public void MapValueTypes()
+    {
+        //TODO: Aggiungere i check per gli altri tipi (enum varie, TimeOnly e DateOnly)
+        var dt = new TestDataSet.ValueTypesDataTable();
+        var row = dt.NewValueTypesRow();
+
+        row.Boolean = true;
+        row.Byte = byte.MaxValue;
+        row.Char = 'X';
+        row.DateTime = DateTime.MaxValue;
+        row.DateTimeOffset = DateTimeOffset.MaxValue;
+        row.Decimal = decimal.MaxValue;
+        row.Double = double.MaxValue;
+        row.Float = float.MaxValue;
+        row.Guid = Guid.NewGuid();
+        row.Int = int.MaxValue;
+        row.Long = long.MaxValue;
+        row.Short = short.MaxValue;
+        row.SignedByte = sbyte.MinValue;
+        row.String = "String";
+        row.TimeSpan = TimeSpan.MaxValue;
+        row.UnsignedInt = uint.MinValue;
+        row.UnsignedLong = ulong.MinValue;
+        row.UnsignedShort = ushort.MinValue;
+
+        var target = Mapper.Map<ValueTypes>(row);
+
+        Assert.IsNotNull(target);
+        Assert.AreEqual(row.Boolean, target.Boolean);
+        Assert.AreEqual(row.Byte, target.Byte);
+        Assert.AreEqual(row.Char, target.Char);
+        Assert.AreEqual(row.DateTime, target.DateTime);
+        Assert.AreEqual(row.DateTimeOffset, target.DateTimeOffset);
+        Assert.AreEqual(row.Decimal, target.Decimal);
+        Assert.AreEqual(row.Double, target.Double);
+        Assert.AreEqual(row.Float, target.Float);
+        Assert.AreEqual(row.Guid, target.Guid);
+        Assert.AreEqual(row.Int, target.Int);
+        Assert.AreEqual(row.Long, target.Long);
+        Assert.AreEqual(row.Short, target.Short);
+        Assert.AreEqual(row.SignedByte, target.SignedByte);
+        Assert.AreEqual(row.String, target.String);
+        Assert.AreEqual(row.TimeSpan, target.TimeSpan);
+        Assert.AreEqual(row.UnsignedInt, target.UnsignedInt);
+        Assert.AreEqual(row.UnsignedLong, target.UnsignedLong);
+        Assert.AreEqual(row.UnsignedShort, target.UnsignedShort);
+    }
 }
